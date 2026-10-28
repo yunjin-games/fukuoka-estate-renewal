@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>福岡エステート株式会社 | Fukuoka Estate Co., Ltd.</title>
+<!-- Google Fonts: Noto Serif JP & Noto Sans JP -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#e2e2e5",
+            "on-tertiary-container": "#bcac9a",
+            "primary-container": "#264653",
+            "surface-dim": "#d9dadc",
+            "secondary-fixed": "#ffdcbb",
+            "on-secondary-fixed-variant": "#5d4121",
+            "surface-container-high": "#e8e8ea",
+            "secondary-container": "#fdd2a7",
+            "on-tertiary-fixed": "#231a0f",
+            "on-primary-fixed": "#001f29",
+            "on-surface": "#1a1c1e",
+            "on-secondary-container": "#785937",
+            "primary": "#0c303c",
+            "secondary-fixed-dim": "#e8bf95",
+            "surface-container-low": "#f3f3f6",
+            "tertiary-container": "#4b4033",
+            "surface-container": "#edeef0",
+            "outline": "#72787b",
+            "surface": "#f9f9fb",
+            "surface-container-lowest": "#ffffff",
+            "on-background": "#1a1c1e",
+            "tertiary-fixed": "#f2e0cd",
+            "on-secondary-fixed": "#2b1700",
+            "secondary": "#775836",
+            "primary-fixed": "#c6e8f8",
+            "background": "#f9f9fb",
+            "on-error": "#ffffff",
+            "on-tertiary-fixed-variant": "#504537",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#93b3c3",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "surface-tint": "#436370",
+            "tertiary": "#342a1e",
+            "inverse-primary": "#abcbdb",
+            "primary-fixed-dim": "#abcbdb",
+            "on-surface-variant": "#42484b",
+            "inverse-surface": "#2f3133",
+            "error": "#ba1a1a",
+            "outline-variant": "#c1c7cb",
+            "surface-bright": "#f9f9fb",
+            "tertiary-fixed-dim": "#d5c4b2",
+            "on-primary-fixed-variant": "#2b4b58",
+            "inverse-on-surface": "#f0f0f3",
+            "on-secondary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-variant": "#e2e2e5"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "margin-mobile": "1.25rem",
+            "margin": "3rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.75rem",
+            "space-xl": "3rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Noto Serif JP", "serif"],
+            "body-sm": ["Noto Sans JP", "sans-serif"],
+            "headline-sm": ["Noto Sans JP", "sans-serif"],
+            "body-lg": ["Noto Sans JP", "sans-serif"],
+            "body-md": ["Noto Sans JP", "sans-serif"],
+            "label-md": ["Noto Sans JP", "sans-serif"],
+            "title-md": ["Noto Sans JP", "sans-serif"],
+            "headline-lg-mobile": ["Noto Serif JP", "serif"],
+            "display-mobile": ["Noto Serif JP", "serif"],
+            "label-sm": ["Noto Sans JP", "sans-serif"],
+            "display": ["Noto Serif JP", "serif"],
+            "headline-md": ["Noto Serif JP", "serif"]
+          },
+          "fontSize": {
+            "headline-lg": ["36px", { "lineHeight": "50px", "letterSpacing": "0.03em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "28px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+            "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+            "title-md": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "38px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-mobile": ["32px", { "lineHeight": "44px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "display": ["48px", { "lineHeight": "64px", "letterSpacing": "0.04em", "fontWeight": "500" }],
+            "headline-md": ["26px", { "lineHeight": "38px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- 1) HEADER -->
+<header class="sticky top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/60">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<!-- Company Brand Name Text -->
+<a class="font-headline-md text-headline-md tracking-wider text-primary font-medium flex items-center gap-2" href="#">
+        福岡エステート株式会社
+      </a>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#produce">事業内容</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#brokerage">物件情報</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#achievements">実績</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#company">会社概要</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contact">お問い合わせ</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="hidden lg:flex items-center gap-2 text-primary font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="tel:092-409-2585">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+<span>092-409-2585</span>
+</a>
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg hover:bg-primary-container transition-colors duration-200 shadow-sm" href="#contact">
+          資料請求・お問い合わせ
+        </a>
+</div>
+</div>
+</header>
+<main>
+<!-- 2) HERO SECTION -->
+<section class="relative bg-surface overflow-hidden border-b border-outline-variant/40">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Hero Copy -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 mb-4">
+<span class="w-6 h-[1.5px] bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary tracking-widest">FUKUOKA &amp; KYUSHU COMPREHENSIVE REAL ESTATE</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6 leading-tight">
+            福岡・九州の不動産資産を最大限に活かす、確かな総合不動産パートナー
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl leading-relaxed">
+            地域に根ざした深い知見と専門ネットワークで、不動産オーナー様、仲介業者様、そして投資家様へ。安心と確かな未来を拓くワンストップソリューションを提供いたします。
+          </p>
+<div class="flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-primary-container transition-all duration-200 shadow-sm" href="#brokerage">
+              物件のご相談
+            </a>
+<a class="inline-flex items-center justify-center border border-secondary text-secondary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-surface-container-low transition-all duration-200" href="#company">
+              会社概要
+            </a>
+</div>
+</div>
+<!-- Hero Photographic Frame -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-outline-variant/60 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern serene urban architecture in Fukuoka city along the calm bay, featuring refined residential structures basking in warm evening sunlight. The composition emphasizes harmonious Japanese wooden details mixed with contemporary glass facades, surrounded by tranquil coastal waters, high-key warm ambient light, deep charcoal and beige earth tones, reflecting luxury and stability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7B7ximiRy_0RTk_a_k7SejVk6W3Agp-dVm4HYQUAtAJrlTZPuNMsGXAnxd_-Kar9Jh90iUrUJl-bmJMtP4gF7laGI3x-SCBJpZ03XNlcmyMTeBxUk2VjHdFE1dg-Z3dWE97rooDyXc4JoLmGRTxof9W9DVxyVPk-oBqIXs-Ux5r0zDfM6SLN6HMjAQKMmIOIh6hkh1LWiWcI4oY7wiPleRABtvAQclYWQhLKlFxFzVsvktB7OFgdLPCM3vdFFfoUZGt8MEwt0OPk"/>
+</div>
+<div class="absolute -bottom-4 -left-4 bg-surface-container-lowest p-5 rounded-lg border border-outline-variant/60 shadow-md hidden sm:block">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl">apartment</span>
+<div>
+<div class="font-label-md text-label-md text-primary font-semibold">総合不動産マネジメント</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">開発・売買・賃貸仲介・管理</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3) マンションプロデュース事業 (Mansion Produce Business) -->
+<section class="py-20 lg:py-28 bg-surface-container-lowest border-b border-outline-variant/40" id="produce">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-2">MANSION PRODUCE BUSINESS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">マンションプロデュース事業</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            土地の選定から企画設計、運用管理まで。時代のニーズを捉え、持続的に価値を創出する住まいと事業空間を創出します。
+          </p>
+</div>
+<!-- Four Cards Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Elegant contemporary Japanese condominium facade in Fukuoka, featuring refined timber eaves and earth-colored textured exterior walls. Soft diffused daylight illuminates clean architectural lines, warm natural materials, and lush street-level green landscaping, captured in an architectural editorial light with balanced warm neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpCbiUFfpciuPLTU6pN9PdsvyVFa47ql9-GL0_BeNsHIO1swjxA-KXIFAOiff49mg0xYOkduc36HZ4TvKD5_8QM9ZcTmq4hHgqcMfi5xKmTqIqZAxRTIV-S-zJUSgF3ZNL7cE2LeHOU6wtf8wTOjMlpuhgN0vVuDAFTXnfINFb5Uv12MUeMuZn1CYU5npXmcEvuc7B9Dzsbp4eXp07zexfoQtQ9glMOxVLygGc_bApAChe2_TH173l5Ksh7xSlYQgKiv4NfRDaBSM"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wider mb-2 block">PRODUCE 01</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">レジデンスシリーズ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  高い居住性と資産価値を両立する分譲・賃貸マンション開発
+                </p>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Modern commercial and boutique office building in Hakata Fukuoka, featuring minimalist glass curtains, warm sandstone accents, and delicate dark metal frames. Sunlight reflects gently on clean geometric surfaces, embodying professional serenity, urban sophistication, and natural warm cedar aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE3iSWawVkI6d2JwVyWhDDqF4TaW8cC-sIPeODRfHHrvpmvjyyqAY_o5ckp38ogG8bLT_xv3S-X9lMwuCZeGmlQtjiwMxvCdUjuSLG2C9zxTRxPaJn-TI7e7heaknBmRFH0jYFa22YtEgqIpLpNs07qmUQEx0pYHaUVKhC5MTqVeyXZmursXgu5ixa2lsgQkQdUpnL0hUuwpnxayrXPtLgi79Q6ARMKu_5ZyNXO3GbZ1qCgSlvrsgpN8IE444bQ5m9DTubTCGTOYc"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wider mb-2 block">PRODUCE 02</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">テナントシリーズ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  利便性と収益性を高める商業・オフィスビルのプロデュース
+                </p>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Orderly, modern automated parking facility in an urban Japanese district, designed with tasteful warm stone paving, subtle lighting fixtures, and clean perimeter planting. The space feels secure, functional, and integrated into high-end architectural surroundings with minimal clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMoV2yUR7kQMOGrOOpvq1StlaDFXX_li_R3WNBEdPThS4ENqYMxHwTUfwEiKpq79PeQ9Q78tY7zP5Ipfd3YrorgnZGx0kXe0TKZ96p04nwW8wsbIofYPpqxRWVZYzQZQ0iqQ9dgL9Snyg-_pgzXrsZe9HOEB1cgE5sHdydqaR_8IsvPEcfTKKuG-nY1KkwnGJUHOFFALlXc4KoibN4O_ZsZMb2IHk7YpmiqZFBozUIpD33C8XUQbplCPy-hWPYwIWEDTEHiKH4Yic"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wider mb-2 block">PRODUCE 03</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">駐車場管理システム</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  土地の有効活用と安定収益を実現するコインパーキング・月極駐車場運営
+                </p>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<div class="aspect-[16/10] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Interior entrance lobby of a luxury residential building in Fukuoka, with polished limestone floors, gentle slatted cedar wall paneling, and discreet concierge desk. Natural light pours softly through translucent paper-inspired glass screens, invoking calmness, hospitality, and rigorous architectural maintenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdvcpIgjTQBfnI7yeTRK-kJOMLNFovB-9vlckDoUnkqS6HLqYQ-z8HUhIsYCQInisQK3npHUAXmxs2YIk4iBQDgboDA4d944fh2pLWUL4iElx9FO_Tnl5jBFMQzpOCrKOCpM3SVc6mHk-qzg4P_8AcQRpzerqHKSUQFw_V-wzDKhZlgojyiqW9lSzLP-Yy0n1qXkanrYSV8rmFmT0HuaQgkMtk-nHjSvNKDBK8euPJ8BwfzZQhSlcnhipSEV2gHIGbJc9Q9IwF41w"/>
+</div>
+<div class="p-6 flex-1 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-medium tracking-wider mb-2 block">PRODUCE 04</span>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3">管理システム</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  入居者管理から建物保守まで資産価値を保つ総合管理ソリューション
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4) 仲介業者様向け物件情報 (Property Information for Brokers) -->
+<section class="py-20 lg:py-28 bg-surface border-b border-outline-variant/40" id="brokerage">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12">
+<div class="max-w-3xl mb-14">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-2">FOR PARTNERS &amp; BROKERS</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">仲介業者様向け物件情報</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            お客様の目的や条件に合わせた有益な資産活用をご提案。ワンルームマンションから１棟ビル・マンションなど物件丸ごとのお取引まで、経験と実績を積み重ねてきたスタッフが懇切丁寧にサポートいたします。
+          </p>
+</div>
+<!-- Two Wide Feature Blocks -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Feature A -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col">
+<div class="aspect-[16/9] w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A premium multi-family residential building in downtown Fukuoka viewed at twilight. The architectural facade features balanced concrete, warm wood louvers, and warm internal illumination glowing through clean balconies. A tranquil Kyushu street scene evokes high investment reliability and substantial scale." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLv6V6Ucqa2YTDHRzN5Yw6CKYngAHfAMwbJjmf_1R63ItCdDBJfCSDXQnZ6nPrrOzhsHKwpQE_w0PuDxoUj0m4sNbAGz5ggpA4RdELFt6NvjXRvjQDyJViqxOaWYSxag0VctCCXvn70DDNGf8SZOzkwtWQ8GziqQEcPiALHZYeRZPBG8ynUy8if0oXgVZgp8X4nSRHbzpOXWGHJQYOpb7o7q_v7q3HjZlaT9XtFa51x8HJoeVMTca4ez_xsHvXtlUsFB1revCxyp8"/>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-xl">domain</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">１棟ビル・マンションの売買・仲介</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  福岡市を中心に、熊本や鹿児島まで九州各地において、小・中規模から70戸を超える規模のマンションまで、多種多様な規模の売買・仲介を手掛けています。
+                </p>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">九州全域ネットワーク</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Feature B -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col">
+<div class="aspect-[16/9] w-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior of an upscale renovated condominium living room in Tenjin, Fukuoka. The interior showcases warm white oak flooring, contemporary minimal Japanese furnishings, soft neutral upholstery, and large floor-to-ceiling windows showing warm natural daylight. Clean, tranquil, and comfortable residential ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSORKNon-0clQORBIfWnqdrUP04KHvPpVFdDbaI3Jfri7MK4pmCzrzKho6ZEQQZCzdzPp2PtFRWE3LJ7fhtK6JQQZFBFDU23RlEpkhJYIp2oD_Vi6w_ltv3QbvaAHyWkRRbfLvQoa6KchgAPjI69VUzJTb5FKgAQTwh2OJGe-065G3RaBxPG67v1lR9uQA0KZk0t_6WH-WIgWyi7vyghJTsLhV5xpVMYqYOJVBK6wkyt-jCOiZ3ePNGN8_K8zr5SSgzj7_0xYz8es"/>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-xl">home_pin</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">戸別物件の売買・仲介</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  需要の高い1R〜2LDKの単身用の物件から、ご夫婦・家族対応の広めの物件も対応いたします。お気軽にご相談ください。
+                </p>
+</div>
+<div class="mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">単身向けからファミリータイプまで</span>
+<span class="material-symbols-outlined text-outline">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5) 実績 (Achievements) Band -->
+<section class="py-16 bg-surface-container-low border-b border-outline-variant/60" id="achievements">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12">
+<div class="text-center mb-10">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-1">ACHIEVEMENTS</span>
+<h2 class="font-headline-md text-headline-md text-primary font-medium">確かな信頼と実績</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/60 flex items-center justify-between shadow-sm">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">保有実績</p>
+<div class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+                自社保有物件 <span class="text-secondary font-headline-md">○○件</span>
+</div>
+</div>
+<div class="w-14 h-14 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">real_estate_agent</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/60 flex items-center justify-between shadow-sm">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">新規開発計画</p>
+<div class="font-headline-lg text-headline-lg text-primary font-semibold tracking-tight">
+                ○○○○年 新プロジェクト <span class="text-secondary font-headline-md">○○件</span>
+</div>
+</div>
+<div class="w-14 h-14 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">domain_add</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6) 運営サイト & 関連会社 -->
+<section class="py-20 lg:py-24 bg-surface border-b border-outline-variant/40">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12">
+<!-- 運営サイト -->
+<div class="mb-16">
+<div class="flex items-center gap-3 mb-8">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-primary font-medium">運営サイト</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="group p-6 bg-surface-container-lowest border border-outline-variant/60 rounded-xl hover:border-secondary transition-all duration-200 flex items-center justify-between" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">local_parking</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-1 group-hover:text-secondary transition-colors duration-200">駐車場管理システム</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">コインパーキング・月極駐車場の専用ポータル</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">open_in_new</span>
+</a>
+<a class="group p-6 bg-surface-container-lowest border border-outline-variant/60 rounded-xl hover:border-secondary transition-all duration-200 flex items-center justify-between" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl">corporate_fare</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-1 group-hover:text-secondary transition-colors duration-200">管理システム</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">不動産管理・オーナー様サポートサービス</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- 関連会社 (Related Companies / Partner Financial Institutions) -->
+<div>
+<div class="flex items-center gap-3 mb-8">
+<span class="w-3 h-3 bg-secondary rounded-full"></span>
+<h3 class="font-headline-md text-headline-md text-primary font-medium">関連会社・主要取引先</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg text-center flex items-center justify-center">
+<span class="font-title-md text-title-md text-primary font-medium">上村建設</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg text-center flex items-center justify-center">
+<span class="font-title-md text-title-md text-primary font-medium">ハッピーハウス</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg text-center flex items-center justify-center">
+<span class="font-title-md text-title-md text-primary font-medium">福岡銀行</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 p-6 rounded-lg text-center flex items-center justify-center">
+<span class="font-title-md text-title-md text-primary font-medium">佐賀銀行</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 7) 会社概要 (Company Profile) -->
+<section class="py-20 lg:py-28 bg-surface-container-lowest border-b border-outline-variant/40" id="company">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12">
+<div class="max-w-2xl mb-12">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-2">COMPANY PROFILE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">会社概要</h2>
+</div>
+<!-- Two Column Definition Table -->
+<div class="border border-outline-variant/60 rounded-xl overflow-hidden mb-12">
+<dl class="divide-y divide-outline-variant/50">
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">会社名</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">福岡エステート株式会社 / Fukuoka Estate Co., Ltd.</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">本社</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">東区営業所</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">韓国事務所</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">Daegu, Republic of Korea</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">代表電話</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">092-409-2585</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">設立</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">2019年4月15日</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">資本金</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">1,000万円</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">役員</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">代表取締役社長 金 正泰 / 取締役 浦田 政人 / 取締役 妹尾 奈緒</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">免許</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">宅地建物取引業免許 福岡県知事（2）19743</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">加入団体</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">(公社)全国宅地建物取引業保証協会</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">主要取引銀行</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary">福岡銀行 / 西日本シティ銀行 / 佐賀銀行 / 福岡県信用組合</dd>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 bg-surface-container-lowest">
+<dt class="md:col-span-3 p-4 md:py-4 md:px-6 font-body-sm text-body-sm font-semibold text-on-surface-variant bg-surface-container-low/50">事業内容</dt>
+<dd class="md:col-span-9 p-4 md:py-4 md:px-6 font-body-md text-body-md text-primary leading-relaxed">
+                1.不動産の売買・賃貸及びその仲介業<br/>
+                2.宅地の造成・分譲及び建売業<br/>
+                3.不動産有効利用コンサルタント及び経営企画
+              </dd>
+</div>
+</dl>
+</div>
+<!-- Office Map Container: Empty square element with id="board-slot" and visible rounded border -->
+<div class="w-full">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary">map</span>
+<span class="font-title-md text-title-md text-primary font-medium">アクセスマップ</span>
+</div>
+<div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-xl border border-outline-variant/80 bg-surface-container-low" id="board-slot"></div>
+</div>
+</div>
+</section>
+<!-- 8) 資料請求・お問い合わせ Form -->
+<section class="py-20 lg:py-28 bg-surface border-b border-outline-variant/40" id="contact">
+<div class="max-w-[840px] mx-auto px-6 lg:px-12">
+<div class="text-center mb-12">
+<span class="font-label-sm text-label-sm text-secondary tracking-widest block mb-2">INQUIRY &amp; CONTACT</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-3">資料請求・お問い合わせ</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            物件のご売却、ご購入、仲介のご相談などお気軽にお問い合わせください。
+          </p>
+</div>
+<form class="bg-surface-container-lowest p-8 md:p-12 rounded-xl border border-outline-variant/60 shadow-sm space-y-8">
+<!-- お問い合わせ項目 (Required) -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-3">
+              お問い合わせ項目 <span class="text-error font-medium">※ (必須)</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" required="" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface">不動産売却相談（売りたい）</span>
+</label>
+<label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface">不動産購入相談（買いたい）</span>
+</label>
+<label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface">賃貸（借りたい）</span>
+</label>
+<label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<span class="font-body-sm text-body-sm text-on-surface">その他</span>
+</label>
+</div>
+</div>
+<!-- お名前 (Required: Split into 姓 and 名) -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-2">
+              お名前 <span class="text-error font-medium">※ (必須)</span>
+</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="姓 (例: 福岡)" required="" type="text"/>
+</div>
+<div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="名 (例: 太郎)" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- メールアドレス (Required) -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-2">
+              メールアドレス <span class="text-error font-medium">※ (必須)</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="example@estate.co.jp" required="" type="email"/>
+</div>
+<!-- 電話番号 (Required) -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-2">
+              電話番号 <span class="text-error font-medium">※ (必須)</span>
+</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="092-000-0000" required="" type="tel"/>
+</div>
+<!-- ご住所 -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-2">
+              ご住所
+            </label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="福岡市中央区..." type="text"/>
+</div>
+<!-- お問い合わせ内容 (Required) -->
+<div>
+<label class="block font-label-md text-label-md text-primary font-semibold mb-2">
+              お問い合わせ内容 <span class="text-error font-medium">※ (必須)</span>
+</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline resize-y" placeholder="ご質問やご相談内容をご記入ください。" required="" rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-4 text-center">
+<button class="w-full sm:w-auto min-w-[240px] bg-primary text-on-primary font-label-md text-label-md px-10 py-4 rounded-lg hover:bg-primary-container transition-all duration-200 shadow-sm font-semibold" type="submit">
+              送信する
+            </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- 9) FOOTER -->
+<footer class="bg-surface-container-low border-t border-outline-variant/60">
+<div class="max-w-[1240px] mx-auto px-6 lg:px-12 py-16 flex flex-col justify-between gap-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<div class="md:col-span-6">
+<div class="font-headline-md text-headline-md text-primary font-medium tracking-wide mb-4">
+            福岡エステート株式会社
+          </div>
+<div class="space-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<p>本社: 〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</p>
+<p>東区営業所: 〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</p>
+<p>電話番号: 092-409-2585</p>
+<p>免許番号: 宅地建物取引業免許 福岡県知事（2）19743</p>
+</div>
+</div>
+<div class="md:col-span-6 flex flex-col md:items-end justify-between self-stretch">
+<div class="flex flex-wrap gap-x-6 gap-y-2 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-200" href="#produce">事業内容</a>
+<a class="hover:text-primary transition-colors duration-200" href="#brokerage">物件情報</a>
+<a class="hover:text-primary transition-colors duration-200" href="#achievements">実績</a>
+<a class="hover:text-primary transition-colors duration-200" href="#company">会社概要</a>
+<a class="hover:text-primary transition-colors duration-200" href="#contact">お問い合わせ</a>
+</div>
+<div class="mt-8 md:mt-0 font-body-sm text-body-sm text-outline">
+            © Fukuoka Estate Co., Ltd. All Rights Reserved.
+          </div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

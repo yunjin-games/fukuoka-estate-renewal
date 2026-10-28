@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>福岡エステート 리뉴얼 시안</title>
+<style>
+:root{
+  --bg:#f3f4f6; --panel:#ffffff; --ink:#1f232a; --sub:#69717d; --line:#d9dde3;
+  --stitch:#2f6db5; --claude:#b0563a; --cd:#6b5aa6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--stitch);outline-offset:2px}
+
+.intro{background:var(--panel);padding:40px 16px 28px}
+.intro .in{max-width:1180px;margin:0 auto}
+.intro h1{font-size:26px;letter-spacing:-.01em}
+.intro p{color:var(--sub);margin-top:6px;max-width:680px}
+
+nav{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line)}
+.tabs{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:0 16px;overflow-x:auto;scrollbar-width:thin}
+.group{display:flex;gap:2px;align-items:center;padding-right:12px;margin-right:8px;border-right:1px solid var(--line)}
+.group:last-child{border-right:0}
+.glabel{font-size:12px;color:var(--sub);margin-right:6px;white-space:nowrap}
+.tab{display:inline-flex;align-items:center;gap:7px;padding:14px 12px;font-size:14px;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+.tab::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.tab:hover{border-bottom-color:var(--c)}
+.tab.wait{color:#a3a9b2;cursor:default}
+.tab.wait:hover{border-bottom-color:transparent}
+
+main{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
+section + section{margin-top:44px}
+h2{font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:16px}
+h2::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
+h2 small{font-weight:400;color:var(--sub);font-size:13.5px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--c);transform:translateY(-2px)}
+.card img{display:block;width:100%;aspect-ratio:1440/1000;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);background:#e6e8ec}
+.card .tx{padding:14px 16px 16px}
+.card b{display:block;font-size:15.5px}
+.card span{display:block;font-size:13.5px;color:var(--sub);margin-top:2px}
+.card .go{margin-top:10px;font-size:13px;color:var(--c);font-weight:700}
+.card.wait{cursor:default}
+.card.wait:hover{transform:none;border-color:var(--line)}
+.card.wait .ph{aspect-ratio:1440/1000;display:flex;align-items:center;justify-content:center;color:#a3a9b2;font-size:14px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(135deg,#f6f7f9 0 12px,#eef0f3 12px 13px)}
+footer{max-width:1180px;margin:0 auto;padding:0 16px 40px;color:var(--sub);font-size:12.5px}
+@media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .grid{grid-template-columns:1fr} .intro h1{font-size:22px} }
+@media (prefers-reduced-motion:reduce){ .card{transition:none} .card:hover{transform:none} }
+</style>
+</head>
+<body>
+<div class="intro"><div class="in">
+  <h1>福岡エステート株式会社 홈페이지 리뉴얼 시안</h1>
+  <p>부동산 사업만 남긴 TOP 페이지 시안입니다. 위의 탭이나 아래 카드를 누르면 시안이 새 창에서 열립니다.</p>
+</div></div>
+<nav aria-label="시안"><div class="tabs" id="tabs"></div></nav>
+<main id="main"></main>
+<footer>2026-10 · 시안 단계 — 사진·실적 숫자는 확정 후 바꿉니다.</footer>
+
+<script>
+// 결과가 들어오면 ready 를 true 로 바꾸고 thumbs/<id>.jpg 를 만든다.
+const DESIGNS = [
+  {group:"스티치", c:"--stitch", id:"stitch_1", name:"스티치 1", ready:true,
+   desc:"남색 기업형 — 단단하고 보수적인 톤"},
+  {group:"스티치", c:"--stitch", id:"stitch_2", name:"스티치 2", ready:true,
+   desc:"밝은 주거형 — 명조체와 넓은 여백"},
+  {group:"스티치", c:"--stitch", id:"stitch_3", name:"스티치 3", ready:true,
+   desc:"어두운 고급형 — 짙은 회색과 금색"},
+  {group:"클로드", c:"--claude", id:"claude_1", name:"클로드 1 · 献上", ready:true,
+   desc:"하카타오리 다섯 색 줄무늬, 세로쓰기 제목"},
+  {group:"클로드", c:"--claude", id:"claude_2", name:"클로드 2 · 図面", ready:true,
+   desc:"건축 도면 — 입면도와 표제란"},
+  {group:"클로드 디자인", c:"--cd", id:"claude_design_1", name:"클로드 디자인 1 · 사진과 거리", ready:true,
+   desc:"잡지 같은 구성, 크림 바탕과 명조체"},
+  {group:"클로드 디자인", c:"--cd", id:"claude_design_2", name:"클로드 디자인 2 · 지역과 규모", ready:false,
+   desc:"규슈 지도로 거래 지역 표시"},
+  {group:"클로드 디자인", c:"--cd", id:"claude_design_3", name:"클로드 디자인 3 · 상담 우선", ready:false,
+   desc:"큰 글씨, 전화·문의 동선 우선"},
+];
+
+const tabs = document.getElementById("tabs");
+const main = document.getElementById("main");
+const href = d => `designs/${d.id}/index.html`;
+let lastGroup = null, groupEl = null, gridEl = null;
+
+DESIGNS.forEach(d => {
+  if (d.group !== lastGroup) {
+    lastGroup = d.group;
+    groupEl = document.createElement("div");
+    groupEl.className = "group";
+    groupEl.innerHTML = `<span class="glabel">${d.group}</span>`;
+    tabs.appendChild(groupEl);
+    const sec = document.createElement("section");
+    sec.style.setProperty("--c", `var(${d.c})`);
+    sec.innerHTML = `<h2>${d.group}</h2><div class="grid"></div>`;
+    main.appendChild(sec);
+    gridEl = sec.querySelector(".grid");
+  }
+
+  const tab = document.createElement(d.ready ? "a" : "span");
+  tab.className = "tab" + (d.ready ? "" : " wait");
+  tab.style.setProperty("--c", `var(${d.c})`);
+  tab.textContent = d.name + (d.ready ? "" : " (준비 중)");
+  if (d.ready) { tab.href = href(d); tab.target = "_blank"; tab.rel = "noopener"; }
+  groupEl.appendChild(tab);
+
+  const card = document.createElement(d.ready ? "a" : "div");
+  card.className = "card" + (d.ready ? "" : " wait");
+  card.style.setProperty("--c", `var(${d.c})`);
+  if (d.ready) {
+    card.href = href(d); card.target = "_blank"; card.rel = "noopener";
+    card.innerHTML = `<img src="thumbs/${d.id}.jpg" alt="${d.name} 첫 화면" loading="lazy">
+      <div class="tx"><b>${d.name}</b><span>${d.desc}</span><div class="go">새 창에서 보기</div></div>`;
+  } else {
+    card.innerHTML = `<div class="ph">준비 중</div><div class="tx"><b>${d.name}</b><span>${d.desc}</span></div>`;
+  }
+  gridEl.appendChild(card);
+});
+</script>
+</body>
+</html>

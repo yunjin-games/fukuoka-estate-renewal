@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>福岡エステート株式会社 | 福岡の不動産</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* 博多献上の五色 */
+  --kon:#1d2b4f;      /* 紺 */
+  --ai:#3a6aa3;       /* 藍 */
+  --beni:#a8323e;     /* 紅 */
+  --kin:#c9982e;      /* 黄 */
+  --murasaki:#5a3e73; /* 紫 */
+  --ink:#1b1e26;
+  --sub:#5a6070;
+  --paper:#f6f7f9;
+  --white:#ffffff;
+  --line:#d8dce3;
+  --mincho:"Shippori Mincho",serif;
+  --gothic:"Zen Kaku Gothic New",system-ui,sans-serif;
+  --wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--gothic);color:var(--ink);background:var(--white);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--kin);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+
+/* 献上の縞 — 5色を細い白線で区切る */
+.kenjo{background:linear-gradient(90deg,
+  var(--murasaki) 0 18%, #fff 18% 19%,
+  var(--ai) 19% 39%, #fff 39% 40%,
+  var(--beni) 40% 60%, #fff 60% 61%,
+  var(--kin) 61% 81%, #fff 81% 82%,
+  var(--kon) 82% 100%)}
+.kenjo-v{background:linear-gradient(180deg,
+  var(--murasaki) 0 18%, #fff 18% 19%,
+  var(--ai) 19% 39%, #fff 39% 40%,
+  var(--beni) 40% 60%, #fff 60% 61%,
+  var(--kin) 61% 81%, #fff 81% 82%,
+  var(--kon) 82% 100%)}
+
+/* header */
+.top-strip{height:6px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.hd{display:flex;align-items:center;gap:32px;height:76px}
+.logo{font-family:var(--mincho);font-weight:800;font-size:21px;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+.logo small{display:block;font-family:var(--gothic);font-size:10.5px;font-weight:500;color:var(--sub);letter-spacing:.08em;margin-top:-4px}
+nav{display:flex;gap:26px;margin-left:auto}
+nav a{text-decoration:none;font-size:14.5px;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--beni)}
+.tel{font-family:var(--mincho);font-weight:700;font-size:19px;text-decoration:none;white-space:nowrap}
+.tel span{display:block;font-family:var(--gothic);font-size:10.5px;font-weight:500;color:var(--sub);line-height:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 24px;border-radius:2px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--gothic)}
+.btn-beni{background:var(--beni);color:#fff}
+.btn-beni:hover{background:#8f2733}
+.btn-line{border-color:var(--kon);color:var(--kon);background:transparent}
+.btn-line:hover{background:var(--kon);color:#fff}
+.hd .btn{height:42px;padding:0 18px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.2fr) 14px minmax(0,1fr);min-height:640px;background:var(--paper)}
+.hero-photo{position:relative;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero-photo figcaption{position:absolute;left:24px;bottom:20px;color:#fff;font-size:12px;letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.hero-copy{display:flex;gap:44px;padding:64px 48px 56px;align-items:flex-start}
+.hero-copy h1{flex:none;writing-mode:vertical-rl;font-family:var(--mincho);font-weight:800;font-size:48px;line-height:1.5;letter-spacing:.12em;color:var(--kon);height:520px}
+.hero-copy .lead{flex:1;min-width:220px;align-self:flex-end;max-width:300px}
+.hero-copy .lead .btn{white-space:nowrap}
+.hero-copy .lead p{font-size:15.5px;color:var(--ink);margin-bottom:28px}
+.hero-copy .lead .btn{width:100%;margin-bottom:12px}
+
+/* sections */
+section{padding:112px 0}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:18px 28px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-family:var(--mincho);font-weight:800;font-size:38px;line-height:1.35;letter-spacing:.06em;color:var(--kon)}
+.sec-head .chip{width:64px;height:10px;align-self:center}
+.sec-head p{grid-column:1/-1;max-width:640px;color:var(--sub)}
+
+/* 事業 — 4シリーズに献上の色を一色ずつ割り当て */
+.series{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
+.s-card{background:#fff;display:grid;grid-template-columns:180px 1fr;min-height:200px}
+.s-card .ph{position:relative;background:var(--paper) repeating-linear-gradient(135deg,transparent 0 10px,rgba(29,43,79,.05) 10px 11px);display:flex;align-items:flex-end;padding:12px;font-size:11.5px;color:var(--sub)}
+.s-card .ph::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
+.s-card .tx{padding:30px 32px}
+.s-card h3{font-family:var(--mincho);font-weight:700;font-size:23px;color:var(--kon);margin-bottom:8px;letter-spacing:.04em}
+.s-card p{font-size:14.5px;color:var(--sub)}
+.s-card .tag{display:inline-block;margin-top:14px;font-size:12px;font-weight:700;color:var(--c)}
+
+/* 仲介 */
+.broker{background:var(--paper)}
+.deal{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;background:#fff;margin-bottom:40px;border:1px solid var(--line)}
+.deal:nth-of-type(even){grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+.deal:nth-of-type(even) .ph{order:2}
+.deal .ph{min-height:360px;background:#e9ecf1 repeating-linear-gradient(135deg,transparent 0 14px,rgba(29,43,79,.06) 14px 15px);display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px}
+.deal .ph.photo{background:url(../../assets/fukuoka.jpg) 35% 50%/cover}
+.deal .tx{padding:56px 56px}
+.deal h3{font-family:var(--mincho);font-size:28px;font-weight:800;color:var(--kon);line-height:1.5;margin-bottom:20px;letter-spacing:.04em}
+.deal .area{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.deal .area span{border:1px solid var(--line);padding:2px 12px;font-size:13px;border-radius:2px}
+
+/* 実績 */
+.facts{background:var(--kon);color:#fff;padding:96px 0;position:relative}
+.facts::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px}
+.facts .sec-head h2{color:#fff}
+.facts .sec-head p{color:#c3cadb}
+.nums{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.25)}
+.num{padding:40px 0 8px}
+.num + .num{padding-left:48px;border-left:1px solid rgba(255,255,255,.25)}
+.num dt{font-size:15px;color:#c3cadb;margin-bottom:6px}
+.num dd{font-family:var(--mincho);font-weight:800;font-size:76px;line-height:1.1;letter-spacing:.02em}
+.num dd small{font-size:26px;margin-left:6px}
+.note{margin-top:20px;font-size:12.5px;color:#93a0bd}
+
+/* 運営サイト・関連会社 */
+.links{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px}
+.links h3{font-family:var(--mincho);font-size:22px;font-weight:700;color:var(--kon);margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--kon)}
+.site-list a{display:flex;justify-content:space-between;align-items:center;padding:20px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700;font-size:17px}
+.site-list a:hover{color:var(--beni)}
+.site-list a span{font-weight:400;font-size:13px;color:var(--sub)}
+.partners{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.partners li{list-style:none;background:#fff;padding:22px 20px;font-weight:500}
+
+/* 会社概要 */
+.company{background:var(--paper)}
+.co-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:48px;align-items:start}
+.co-table{width:100%;border-collapse:collapse;background:#fff;border-top:2px solid var(--kon)}
+.co-table th,.co-table td{text-align:left;vertical-align:top;padding:16px 20px;border-bottom:1px solid var(--line);font-size:15px}
+.co-table th{width:150px;font-weight:700;color:var(--kon);background:#fbfbfc;white-space:nowrap}
+.co-table td ol{padding-left:1.3em}
+.co-table .en{display:block;font-size:13px;color:var(--sub)}
+.maps{display:grid;gap:24px;position:sticky;top:100px}
+.map h3{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--kon)}
+.map iframe{width:100%;height:260px;border:0;filter:grayscale(.3)}
+.map p{font-size:13.5px;color:var(--sub);margin-top:6px}
+
+/* お問い合わせ */
+.contact .box{background:#fff;border:1px solid var(--line);border-top:6px solid var(--beni);padding:56px 64px;max-width:880px}
+.req{color:var(--beni);font-weight:700;margin-right:4px}
+fieldset{border:0;margin-bottom:28px}
+legend,.f label.lb{display:block;font-weight:700;font-size:15px;margin-bottom:10px}
+.choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.choice label{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);padding:14px 16px;cursor:pointer;font-size:15px;border-radius:2px}
+.choice input{accent-color:var(--beni);width:18px;height:18px}
+.choice label:has(input:checked){border-color:var(--beni);background:#fbf3f4}
+.f{margin-bottom:24px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1.5px solid var(--line);border-radius:2px;background:#fff}
+input:focus,textarea:focus{outline:none;border-color:var(--ai);box-shadow:0 0 0 3px rgba(58,106,163,.18)}
+textarea{min-height:160px;resize:vertical}
+.submit{display:flex;align-items:center;gap:20px;margin-top:8px}
+.submit .btn{height:56px;padding:0 48px;font-size:16px}
+.submit small{color:var(--sub);font-size:13px}
+
+/* footer */
+footer{background:var(--kon);color:#d7dcea;font-size:13.5px}
+footer .kenjo{height:8px}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;padding:56px 32px 40px}
+.ft .logo{color:#fff;font-size:20px}
+.ft .logo small{color:#aab3c9}
+.ft h4{color:#fff;font-size:13px;margin-bottom:6px}
+.copy{border-top:1px solid rgba(255,255,255,.15);padding:18px 32px;font-size:12px;color:#93a0bd}
+
+/* reveal: ページ読み込み時のヒーローだけ */
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy h1{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+  .hero .kenjo-v{animation:drop 1s .2s cubic-bezier(.2,.7,.2,1) both;transform-origin:top}
+  @keyframes rise{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+  @keyframes drop{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
+
+@media (max-width:1000px){
+  nav{display:none}
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero .kenjo-v{display:none}
+  .hero-photo{height:300px}
+  .hero-copy{flex-direction:column;padding:48px 32px}
+  .hero-copy h1{writing-mode:horizontal-tb;height:auto;font-size:36px;letter-spacing:.06em}
+  .hero-copy .lead{align-self:stretch;max-width:none}
+  .series,.links,.co-grid,.nums{grid-template-columns:1fr}
+  .deal,.deal:nth-of-type(even){grid-template-columns:1fr}
+  .deal:nth-of-type(even) .ph{order:0}
+  .num + .num{padding-left:0;border-left:0;border-top:1px solid rgba(255,255,255,.25)}
+  .maps{position:static}
+  .ft{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  .hd{gap:12px;height:64px}
+  .hd .tel{display:none}
+  .hd .btn{padding:0 12px;font-size:13px;white-space:nowrap}
+  .hd .btn .long{display:none}
+  .logo{font-size:17px}
+  section{padding:72px 0}
+  .sec-head h2{font-size:28px}
+  .s-card{grid-template-columns:1fr}
+  .s-card .ph{height:150px}
+  .deal .tx{padding:32px 24px}
+  .deal .ph{min-height:220px}
+  .num dd{font-size:56px}
+  .contact .box{padding:32px 20px}
+  .choice,.row2{grid-template-columns:1fr}
+  .co-table th{width:100px;padding:14px 12px}
+  .co-table td{padding:14px 12px}
+  .ft{padding:40px 16px 32px}
+  .copy{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="top-strip kenjo" aria-hidden="true"></div>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="#">福岡エステート株式会社<small>Fukuoka Estate Co., Ltd.</small></a>
+    <nav aria-label="メインメニュー">
+      <a href="#business">事業内容</a>
+      <a href="#broker">物件情報</a>
+      <a href="#facts">実績</a>
+      <a href="#company">会社概要</a>
+    </nav>
+    <a class="tel" href="tel:0924092585"><span>代表電話</span>092-409-2585</a>
+    <a class="btn btn-beni" href="#contact"><span class="long">資料請求・</span>お問い合わせ</a>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <figure class="hero-photo">
+    <img src="../../assets/fukuoka.jpg" alt="福岡タワーとシーサイドももちの街並み">
+    <figcaption>福岡市早良区 シーサイドももち</figcaption>
+  </figure>
+  <div class="kenjo-v" aria-hidden="true"></div>
+  <div class="hero-copy">
+    <h1>福岡の不動産を、<br>確かな手で次へ。</h1>
+    <div class="lead">
+      <p>マンションの企画・開発から、一棟・戸別物件の売買仲介、建物と駐車場の管理まで。福岡市を中心に九州各地の不動産を手がけています。</p>
+      <a class="btn btn-beni" href="#contact">物件のご相談</a>
+      <a class="btn btn-line" href="#company">会社概要</a>
+    </div>
+  </div>
+</div>
+
+<section id="business">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>マンションプロデュース事業</h2>
+      <div class="chip kenjo" aria-hidden="true"></div>
+      <p>土地の選定から建物の企画、完成後の運営までを一貫して手がけています。用途に合わせた四つのシリーズで展開しています。</p>
+    </div>
+    <div class="series">
+      <article class="s-card" style="--c:var(--murasaki)">
+        <div class="ph">物件写真</div>
+        <div class="tx"><h3>レジデンスシリーズ</h3><p>単身者からご家族まで、暮らしやすさを考えた賃貸・分譲マンション。</p><span class="tag">住まい</span></div>
+      </article>
+      <article class="s-card" style="--c:var(--ai)">
+        <div class="ph">物件写真</div>
+        <div class="tx"><h3>テナントシリーズ</h3><p>店舗・事務所として使える、立地を活かしたテナントビル。</p><span class="tag">店舗・事務所</span></div>
+      </article>
+      <article class="s-card" style="--c:var(--beni)">
+        <div class="ph">画面イメージ</div>
+        <div class="tx"><h3>駐車場管理システム</h3><p>契約・空き状況・入金を一元管理する、自社運営の駐車場管理サービス。</p><span class="tag">運営サービス</span></div>
+      </article>
+      <article class="s-card" style="--c:var(--kin)">
+        <div class="ph">画面イメージ</div>
+        <div class="tx"><h3>管理システム</h3><p>入居者・契約・修繕の情報をまとめて扱う、物件管理のための仕組み。</p><span class="tag">運営サービス</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="broker" class="broker">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>仲介業者様向け物件情報</h2>
+      <div class="chip kenjo" aria-hidden="true"></div>
+      <p>お客様の目的や条件に合わせた有益な資産活用をご提案。ワンルームマンションから１棟ビル・マンションなど物件丸ごとのお取引まで、経験と実績を積み重ねてきたスタッフが懇切丁寧にサポートいたします。</p>
+    </div>
+    <article class="deal">
+      <div class="ph photo" role="img" aria-label="一棟マンションの写真（差し替え予定）"></div>
+      <div class="tx">
+        <h3>１棟ビル・マンションの<br>売買・仲介</h3>
+        <p>福岡市を中心に、熊本や鹿児島まで九州各地において、小・中規模から70戸を超える規模のマンションまで、多種多様な規模の売買・仲介を手掛けています。</p>
+        <div class="area"><span>福岡</span><span>熊本</span><span>鹿児島</span><span>九州各地</span></div>
+      </div>
+    </article>
+    <article class="deal">
+      <div class="ph">戸別物件の写真</div>
+      <div class="tx">
+        <h3>戸別物件の<br>売買・仲介</h3>
+        <p>需要の高い1R〜2LDKの単身用の物件から、ご夫婦・家族対応の広めの物件も対応いたします。お気軽にご相談ください。</p>
+        <div class="area"><span>1R</span><span>1K</span><span>1LDK</span><span>2LDK</span><span>ファミリー向け</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="facts" class="facts">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>実績</h2>
+      <div class="chip kenjo" aria-hidden="true"></div>
+    </div>
+    <dl class="nums">
+      <div class="num"><dt>自社保有物件</dt><dd>○○<small>件</small></dd></div>
+      <div class="num"><dt>○○○○年 新プロジェクト</dt><dd>○○<small>件</small></dd></div>
+    </dl>
+    <p class="note">※ 数値は確定後に差し替えます。</p>
+  </div>
+  <div class="kenjo" style="position:absolute;left:0;right:0;bottom:0;height:8px" aria-hidden="true"></div>
+</section>
+
+<section>
+  <div class="wrap links">
+    <div>
+      <h3>運営サイト</h3>
+      <div class="site-list">
+        <a href="#">駐車場管理システム <span>サイトを開く</span></a>
+        <a href="#">管理システム <span>サイトを開く</span></a>
+      </div>
+    </div>
+    <div>
+      <h3>関連会社</h3>
+      <ul class="partners">
+        <li>上村建設</li><li>ハッピーハウス</li><li>福岡銀行</li><li>佐賀銀行</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="company" class="company">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>会社概要</h2>
+      <div class="chip kenjo" aria-hidden="true"></div>
+    </div>
+    <div class="co-grid">
+      <table class="co-table">
+        <tr><th>会社名</th><td>福岡エステート株式会社<span class="en">Fukuoka Estate Co., Ltd.</span></td></tr>
+        <tr><th>本社</th><td>〒810-0073<br>福岡市中央区舞鶴2丁目8-13 1F</td></tr>
+        <tr><th>東区営業所</th><td>〒812-0053<br>福岡市東区箱崎1丁目28-17<br>KINGS PARK HAKOZAKI 8-9F</td></tr>
+        <tr><th>韓国事務所</th><td>110 Ho, 17-18, Seojae-ro 36-gil, Dasa-eup, Dalseong-gun, Daegu, Republic of Korea</td></tr>
+        <tr><th>代表電話番号</th><td>092-409-2585</td></tr>
+        <tr><th>設立</th><td>2019年4月15日</td></tr>
+        <tr><th>資本金</th><td>1,000万円</td></tr>
+        <tr><th>役員</th><td>代表取締役社長　金 正泰<br>取締役　浦田 政人<br>取締役　妹尾 奈緒</td></tr>
+        <tr><th>免許・登録番号</th><td>宅地建物取引業免許<br>福岡県知事（2）第19743号</td></tr>
+        <tr><th>加入団体</th><td>（公社）全国宅地建物取引業保証協会</td></tr>
+        <tr><th>主要取引銀行</th><td>福岡銀行 / 西日本シティ銀行 / 佐賀銀行 / 福岡県信用組合</td></tr>
+        <tr><th>顧問税理士</th><td>松島税理士</td></tr>
+        <tr><th>事業内容</th><td><ol><li>不動産の売買・賃貸及びその仲介業</li><li>宅地の造成・分譲及び建売業</li><li>不動産有効利用コンサルタント及び経営企画</li></ol></td></tr>
+      </table>
+      <div class="maps">
+        <div class="map">
+          <h3>本社</h3>
+          <iframe title="本社の地図" loading="lazy" src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%88%9E%E9%B6%B42%E4%B8%81%E7%9B%AE8-13&z=16&output=embed"></iframe>
+          <p>福岡市中央区舞鶴2丁目8-13 1F</p>
+        </div>
+        <div class="map">
+          <h3>東区営業所</h3>
+          <iframe title="東区営業所の地図" loading="lazy" src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E6%9D%B1%E5%8C%BA%E7%AE%B1%E5%B4%8E1%E4%B8%81%E7%9B%AE28-17&z=16&output=embed"></iframe>
+          <p>福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>資料請求・お問い合わせ</h2>
+      <div class="chip kenjo" aria-hidden="true"></div>
+      <p>売却・購入・賃貸のご相談、物件資料のご請求はこちらから。担当者よりご連絡いたします。お急ぎの方は 092-409-2585 までお電話ください。</p>
+    </div>
+    <form class="box" onsubmit="event.preventDefault();this.querySelector('.submit small').textContent='送信しました（デザイン見本のため実際には送信されません）';">
+      <fieldset>
+        <legend><span class="req">※</span>お問い合わせ項目</legend>
+        <div class="choice">
+          <label><input type="radio" name="kind" required checked>不動産売却相談（売りたい）</label>
+          <label><input type="radio" name="kind">不動産購入相談（買いたい）</label>
+          <label><input type="radio" name="kind">賃貸（借りたい）</label>
+          <label><input type="radio" name="kind">その他</label>
+        </div>
+      </fieldset>
+      <div class="f">
+        <label class="lb"><span class="req">※</span>お名前</label>
+        <div class="row2">
+          <input type="text" aria-label="姓" placeholder="姓" required autocomplete="family-name">
+          <input type="text" aria-label="名" placeholder="名" required autocomplete="given-name">
+        </div>
+      </div>
+      <div class="f"><label class="lb" for="m"><span class="req">※</span>メールアドレス</label><input id="m" type="email" required autocomplete="email"></div>
+      <div class="f"><label class="lb" for="t"><span class="req">※</span>電話番号</label><input id="t" type="tel" required autocomplete="tel"></div>
+      <div class="f"><label class="lb" for="a"><span class="req">※</span>ご住所</label><input id="a" type="text" required autocomplete="street-address"></div>
+      <div class="f"><label class="lb" for="b">お問い合わせ内容</label><textarea id="b"></textarea></div>
+      <div class="submit"><button class="btn btn-beni" type="submit">送信する</button><small>※は必須項目です</small></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="kenjo" aria-hidden="true"></div>
+  <div class="ft" style="max-width:var(--wrap);margin:0 auto">
+    <div>
+      <div class="logo">福岡エステート株式会社<small>Fukuoka Estate Co., Ltd.</small></div>
+      <p style="margin-top:16px">宅地建物取引業免許 福岡県知事（2）第19743号</p>
+      <p>TEL 092-409-2585</p>
+    </div>
+    <div><h4>本社</h4><p>〒810-0073<br>福岡市中央区舞鶴2丁目8-13 1F</p></div>
+    <div><h4>東区営業所</h4><p>〒812-0053<br>福岡市東区箱崎1丁目28-17<br>KINGS PARK HAKOZAKI 8-9F</p></div>
+  </div>
+  <div class="copy" style="max-width:var(--wrap);margin:0 auto">© 2026 Fukuoka Estate Co., Ltd.</div>
+</footer>
+
+</body>
+</html>
