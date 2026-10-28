@@ -122,30 +122,53 @@
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
 <!-- 1) HEADER -->
 <header class="sticky top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-outline-variant/60">
-<div class="max-w-[1240px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<div class="max-w-[1240px] mx-auto px-5 sm:px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between gap-4">
 <!-- Company Brand Name Text -->
-<a class="font-headline-md text-headline-md tracking-wider text-primary font-medium flex items-center gap-2" href="#">
+<a class="font-headline-md text-[19px] leading-7 sm:text-headline-md tracking-wider text-primary font-medium flex items-center gap-2 whitespace-nowrap" href="index.html">
         福岡エステート株式会社
       </a>
 <!-- Desktop Nav Items -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#produce">事業内容</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#brokerage">物件情報</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#achievements">実績</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#company">会社概要</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contact">お問い合わせ</a>
+<nav class="hidden lg:flex items-center gap-7 xl:gap-8">
+<div class="relative group">
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary inline-flex items-center gap-0.5" href="index.html#produce">事業内容<span class="material-symbols-outlined text-[18px]">expand_more</span></a>
+<div class="absolute left-1/2 -translate-x-1/2 top-full pt-5 hidden group-hover:block group-focus-within:block">
+<div class="w-60 bg-surface-container-lowest border border-outline-variant/60 rounded-xl shadow-md py-2">
+<a class="flex items-center gap-3 px-4 py-2.5 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="residence.html"><span class="material-symbols-outlined text-[18px] text-secondary">apartment</span>レジデンスシリーズ</a>
+<a class="flex items-center gap-3 px-4 py-2.5 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="tenant.html"><span class="material-symbols-outlined text-[18px] text-secondary">storefront</span>テナントシリーズ</a>
+<a class="flex items-center gap-3 px-4 py-2.5 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="parking.html"><span class="material-symbols-outlined text-[18px] text-secondary">local_parking</span>駐車場管理システム</a>
+<a class="flex items-center gap-3 px-4 py-2.5 font-body-sm text-body-sm text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-colors duration-150" href="management.html"><span class="material-symbols-outlined text-[18px] text-secondary">corporate_fare</span>管理システム</a>
+</div>
+</div>
+</div>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="property.html">物件情報</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="results.html">実績</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="company.html">会社概要</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="contact.html">お問い合わせ</a>
 </nav>
 <!-- Actions -->
-<div class="flex items-center gap-6">
-<a class="hidden lg:flex items-center gap-2 text-primary font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="tel:092-409-2585">
+<div class="flex items-center gap-3 sm:gap-6">
+<a class="hidden xl:flex items-center gap-2 text-primary font-label-md text-label-md hover:text-secondary transition-colors duration-200" href="tel:092-409-2585">
 <span class="material-symbols-outlined text-[18px]">phone</span>
 <span>092-409-2585</span>
 </a>
-<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg hover:bg-primary-container transition-colors duration-200 shadow-sm" href="#contact">
+<a aria-label="電話する" class="sm:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-outline-variant text-primary" href="tel:092-409-2585">
+<span class="material-symbols-outlined text-[20px]">phone</span>
+</a>
+<a class="hidden sm:inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg hover:bg-primary-container transition-colors duration-200 shadow-sm" href="contact.html">
           資料請求・お問い合わせ
         </a>
 </div>
 </div>
+<!-- Mobile / Tablet Nav -->
+<nav class="lg:hidden border-t border-outline-variant/40">
+<div class="max-w-[1240px] mx-auto px-5 sm:px-6 py-2.5 flex flex-wrap justify-center gap-x-4 sm:gap-x-8 gap-y-1">
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="index.html#produce">事業内容</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="property.html">物件情報</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="results.html">実績</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="company.html">会社概要</a>
+<a class="font-label-md text-label-md transition-colors duration-200 text-on-surface-variant hover:text-primary" href="contact.html">お問い合わせ</a>
+</div>
+</nav>
 </header>
 <main>
 <!-- 2) HERO SECTION -->
@@ -164,10 +187,10 @@
             地域に根ざした深い知見と専門ネットワークで、不動産オーナー様、仲介業者様、そして投資家様へ。安心と確かな未来を拓くワンストップソリューションを提供いたします。
           </p>
 <div class="flex flex-wrap items-center gap-4">
-<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-primary-container transition-all duration-200 shadow-sm" href="#brokerage">
+<a class="inline-flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-primary-container transition-all duration-200 shadow-sm" href="contact.html">
               物件のご相談
             </a>
-<a class="inline-flex items-center justify-center border border-secondary text-secondary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-surface-container-low transition-all duration-200" href="#company">
+<a class="inline-flex items-center justify-center border border-secondary text-secondary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-surface-container-low transition-all duration-200" href="company.html">
               会社概要
             </a>
 </div>
@@ -202,7 +225,7 @@
 <!-- Four Cards Bento Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 <!-- Card 1 -->
-<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<a class="group bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300" href="residence.html">
 <div class="aspect-[16/10] overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Elegant contemporary Japanese condominium facade in Fukuoka, featuring refined timber eaves and earth-colored textured exterior walls. Soft diffused daylight illuminates clean architectural lines, warm natural materials, and lush street-level green landscaping, captured in an architectural editorial light with balanced warm neutral tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpCbiUFfpciuPLTU6pN9PdsvyVFa47ql9-GL0_BeNsHIO1swjxA-KXIFAOiff49mg0xYOkduc36HZ4TvKD5_8QM9ZcTmq4hHgqcMfi5xKmTqIqZAxRTIV-S-zJUSgF3ZNL7cE2LeHOU6wtf8wTOjMlpuhgN0vVuDAFTXnfINFb5Uv12MUeMuZn1CYU5npXmcEvuc7B9Dzsbp4eXp07zexfoQtQ9glMOxVLygGc_bApAChe2_TH173l5Ksh7xSlYQgKiv4NfRDaBSM"/>
 </div>
@@ -214,10 +237,14 @@
                   高い居住性と資産価値を両立する分譲・賃貸マンション開発
                 </p>
 </div>
+<div class="mt-6 pt-5 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">詳しく見る</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
 </div>
 </div>
+</a>
 <!-- Card 2 -->
-<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<a class="group bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300" href="tenant.html">
 <div class="aspect-[16/10] overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Modern commercial and boutique office building in Hakata Fukuoka, featuring minimalist glass curtains, warm sandstone accents, and delicate dark metal frames. Sunlight reflects gently on clean geometric surfaces, embodying professional serenity, urban sophistication, and natural warm cedar aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE3iSWawVkI6d2JwVyWhDDqF4TaW8cC-sIPeODRfHHrvpmvjyyqAY_o5ckp38ogG8bLT_xv3S-X9lMwuCZeGmlQtjiwMxvCdUjuSLG2C9zxTRxPaJn-TI7e7heaknBmRFH0jYFa22YtEgqIpLpNs07qmUQEx0pYHaUVKhC5MTqVeyXZmursXgu5ixa2lsgQkQdUpnL0hUuwpnxayrXPtLgi79Q6ARMKu_5ZyNXO3GbZ1qCgSlvrsgpN8IE444bQ5m9DTubTCGTOYc"/>
 </div>
@@ -229,10 +256,14 @@
                   利便性と収益性を高める商業・オフィスビルのプロデュース
                 </p>
 </div>
+<div class="mt-6 pt-5 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">詳しく見る</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
 </div>
 </div>
+</a>
 <!-- Card 3 -->
-<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<a class="group bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300" href="parking.html">
 <div class="aspect-[16/10] overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Orderly, modern automated parking facility in an urban Japanese district, designed with tasteful warm stone paving, subtle lighting fixtures, and clean perimeter planting. The space feels secure, functional, and integrated into high-end architectural surroundings with minimal clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMoV2yUR7kQMOGrOOpvq1StlaDFXX_li_R3WNBEdPThS4ENqYMxHwTUfwEiKpq79PeQ9Q78tY7zP5Ipfd3YrorgnZGx0kXe0TKZ96p04nwW8wsbIofYPpqxRWVZYzQZQ0iqQ9dgL9Snyg-_pgzXrsZe9HOEB1cgE5sHdydqaR_8IsvPEcfTKKuG-nY1KkwnGJUHOFFALlXc4KoibN4O_ZsZMb2IHk7YpmiqZFBozUIpD33C8XUQbplCPy-hWPYwIWEDTEHiKH4Yic"/>
 </div>
@@ -244,10 +275,14 @@
                   土地の有効活用と安定収益を実現するコインパーキング・月極駐車場運営
                 </p>
 </div>
+<div class="mt-6 pt-5 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">詳しく見る</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
 </div>
 </div>
+</a>
 <!-- Card 4 -->
-<div class="bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300">
+<a class="group bg-surface rounded-xl border border-outline-variant/60 overflow-hidden flex flex-col hover:border-secondary transition-all duration-300" href="management.html">
 <div class="aspect-[16/10] overflow-hidden bg-surface-container">
 <img class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" data-alt="Interior entrance lobby of a luxury residential building in Fukuoka, with polished limestone floors, gentle slatted cedar wall paneling, and discreet concierge desk. Natural light pours softly through translucent paper-inspired glass screens, invoking calmness, hospitality, and rigorous architectural maintenance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdvcpIgjTQBfnI7yeTRK-kJOMLNFovB-9vlckDoUnkqS6HLqYQ-z8HUhIsYCQInisQK3npHUAXmxs2YIk4iBQDgboDA4d944fh2pLWUL4iElx9FO_Tnl5jBFMQzpOCrKOCpM3SVc6mHk-qzg4P_8AcQRpzerqHKSUQFw_V-wzDKhZlgojyiqW9lSzLP-Yy0n1qXkanrYSV8rmFmT0HuaQgkMtk-nHjSvNKDBK8euPJ8BwfzZQhSlcnhipSEV2gHIGbJc9Q9IwF41w"/>
 </div>
@@ -259,8 +294,12 @@
                   入居者管理から建物保守まで資産価値を保つ総合管理ソリューション
                 </p>
 </div>
+<div class="mt-6 pt-5 border-t border-outline-variant/40 flex items-center justify-between">
+<span class="font-label-md text-label-md text-secondary font-medium">詳しく見る</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
 </div>
 </div>
+</a>
 </div>
 </div>
 </section>
@@ -291,10 +330,10 @@
                   福岡市を中心に、熊本や鹿児島まで九州各地において、小・中規模から70戸を超える規模のマンションまで、多種多様な規模の売買・仲介を手掛けています。
                 </p>
 </div>
-<div class="mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between">
+<a class="group mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between" href="property.html">
 <span class="font-label-md text-label-md text-secondary font-medium">九州全域ネットワーク</span>
-<span class="material-symbols-outlined text-outline">arrow_forward</span>
-</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
+</a>
 </div>
 </div>
 <!-- Feature B -->
@@ -312,10 +351,10 @@
                   需要の高い1R〜2LDKの単身用の物件から、ご夫婦・家族対応の広めの物件も対応いたします。お気軽にご相談ください。
                 </p>
 </div>
-<div class="mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between">
+<a class="group mt-6 pt-6 border-t border-outline-variant/40 flex items-center justify-between" href="property.html">
 <span class="font-label-md text-label-md text-secondary font-medium">単身向けからファミリータイプまで</span>
-<span class="material-symbols-outlined text-outline">arrow_forward</span>
-</div>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all duration-200">arrow_forward</span>
+</a>
 </div>
 </div>
 </div>
@@ -353,6 +392,11 @@
 <span class="material-symbols-outlined text-3xl">domain_add</span>
 </div>
 </div>
+</div>
+<div class="mt-10 text-center">
+<a class="inline-flex items-center justify-center gap-2 border border-secondary text-secondary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-surface-container-low transition-all duration-200" href="results.html">
+実績を詳しく見る<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
 </div>
 </div>
 </section>
@@ -485,7 +529,12 @@
 <span class="material-symbols-outlined text-secondary">map</span>
 <span class="font-title-md text-title-md text-primary font-medium">アクセスマップ</span>
 </div>
-<div class="w-full aspect-[16/9] md:aspect-[21/9] rounded-xl border border-outline-variant/80 bg-surface-container-low" id="board-slot"></div>
+<iframe class="w-full aspect-[16/9] md:aspect-[21/9] rounded-xl border border-outline-variant/80 bg-surface-container-low overflow-hidden" id="board-slot" title="本社の地図" loading="lazy" style="border:0" src="https://maps.google.com/maps?q=%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E8%88%9E%E9%B6%B42%E4%B8%81%E7%9B%AE8-13&z=16&output=embed"></iframe>
+</div>
+<div class="mt-10 text-center">
+<a class="inline-flex items-center justify-center gap-2 border border-secondary text-secondary font-label-md text-label-md px-8 py-3.5 rounded-lg hover:bg-surface-container-low transition-all duration-200" href="company.html">
+会社概要を詳しく見る<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
 </div>
 </div>
 </section>
@@ -581,9 +630,9 @@
 <div class="max-w-[1240px] mx-auto px-6 lg:px-12 py-16 flex flex-col justify-between gap-12">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 <div class="md:col-span-6">
-<div class="font-headline-md text-headline-md text-primary font-medium tracking-wide mb-4">
+<a class="font-headline-md text-headline-md text-primary font-medium tracking-wide mb-4 inline-block" href="index.html">
             福岡エステート株式会社
-          </div>
+          </a>
 <div class="space-y-2 text-on-surface-variant font-body-sm text-body-sm">
 <p>本社: 〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</p>
 <p>東区営業所: 〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</p>
@@ -592,12 +641,20 @@
 </div>
 </div>
 <div class="md:col-span-6 flex flex-col md:items-end justify-between self-stretch">
-<div class="flex flex-wrap gap-x-6 gap-y-2 font-label-sm text-label-sm text-on-surface-variant">
-<a class="hover:text-primary transition-colors duration-200" href="#produce">事業内容</a>
-<a class="hover:text-primary transition-colors duration-200" href="#brokerage">物件情報</a>
-<a class="hover:text-primary transition-colors duration-200" href="#achievements">実績</a>
-<a class="hover:text-primary transition-colors duration-200" href="#company">会社概要</a>
-<a class="hover:text-primary transition-colors duration-200" href="#contact">お問い合わせ</a>
+<div class="flex flex-col md:items-end gap-3">
+<div class="flex flex-wrap md:justify-end gap-x-6 gap-y-2 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors duration-200" href="index.html#produce">事業内容</a>
+<a class="hover:text-primary transition-colors duration-200" href="property.html">物件情報</a>
+<a class="hover:text-primary transition-colors duration-200" href="results.html">実績</a>
+<a class="hover:text-primary transition-colors duration-200" href="company.html">会社概要</a>
+<a class="hover:text-primary transition-colors duration-200" href="contact.html">お問い合わせ</a>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-6 gap-y-2 font-label-sm text-label-sm text-outline">
+<a class="hover:text-primary transition-colors duration-200" href="residence.html">レジデンスシリーズ</a>
+<a class="hover:text-primary transition-colors duration-200" href="tenant.html">テナントシリーズ</a>
+<a class="hover:text-primary transition-colors duration-200" href="parking.html">駐車場管理システム</a>
+<a class="hover:text-primary transition-colors duration-200" href="management.html">管理システム</a>
+</div>
 </div>
 <div class="mt-8 md:mt-0 font-body-sm text-body-sm text-outline">
             © Fukuoka Estate Co., Ltd. All Rights Reserved.

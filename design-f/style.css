@@ -1,0 +1,175 @@
+/* DESIGN F 「街と写真」 共通スタイル
+   index.html のインライン値（clamp・色・字間）をそのままクラスにしたもの。
+   色: 紙 #F3F0E9 / 墨 #1D1B18 / 灰 #6B655C / 罫線 #D9D3C7 / 写真地 #2A2824 / 煉瓦 #9A4A2E / 面 #EAE6DD */
+
+html{scroll-behavior:smooth}
+body{margin:0;background:#F3F0E9;color:#1D1B18;font-family:'Zen Kaku Gothic New',sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#1D1B18;text-decoration:none}
+a:hover{color:#9A4A2E}
+input,select,textarea{font-family:inherit}
+img{display:block;max-width:100%}
+/* 日本語の折り返しを文節で（対応ブラウザのみ） */
+.h1,.h2,.h3,.step-t,.card-name,.row,.lead{word-break:auto-phrase}
+.hv1:hover{background:#9A4A2E !important;color:#F3F0E9 !important}
+.hv2:hover{background:#FFFFFF !important;color:#1D1B18 !important}
+.hv3:hover{background:rgba(243,240,233,0.12) !important;color:#F3F0E9 !important}
+.hv4:hover{background:#9A4A2E !important}
+
+/* キーボード操作の位置を見せる */
+:focus-visible{outline:2px solid #9A4A2E !important;outline-offset:3px}
+
+/* ---------- ヘッダー ---------- */
+.hd{position:sticky;top:0;z-index:20;background:rgba(243,240,233,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #D9D3C7}
+.hd-in{max-width:1440px;margin:0 auto;padding:18px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px}
+.brand{display:flex;flex-direction:column;gap:2px}
+.brand-ja{font-family:'Shippori Mincho',serif;font-size:22px;font-weight:700;letter-spacing:0.08em}
+.brand-en{font-size:10px;letter-spacing:0.28em;color:#6B655C}
+.gnav{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;letter-spacing:0.06em}
+.gnav a[aria-current]{color:#9A4A2E}
+.hd-act{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px}
+.hd-tel{font-family:'Shippori Mincho',serif;font-size:18px;letter-spacing:0.06em}
+.hd-btn{background:#1D1B18;color:#F3F0E9;padding:12px 20px;font-size:13px;letter-spacing:0.08em}
+.hd-btn:hover{background:#9A4A2E;color:#F3F0E9}
+
+/* ---------- ページ見出し ---------- */
+.ph{max-width:1440px;margin:0 auto;padding:24px clamp(20px,4vw,56px) clamp(64px,9vw,120px)}
+.crumb{display:flex;flex-wrap:wrap;gap:6px 10px;margin:0 0 clamp(56px,8vw,112px);padding:0;list-style:none;font-size:12px;letter-spacing:0.1em;color:#6B655C}
+.crumb a{color:#6B655C}
+.crumb a:hover{color:#9A4A2E}
+.crumb li+li::before{content:"＞";margin-right:10px}
+.ph-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px 80px;align-items:end}
+.ph-title{display:flex;flex-direction:column;gap:18px}
+.h1{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(34px,4.6vw,64px);line-height:1.35;letter-spacing:0.05em}
+.lead{margin:0;font-size:16px;line-height:2.2;letter-spacing:0.04em;text-wrap:pretty}
+
+/* ---------- 写真 ---------- */
+.band-img{display:block;width:100%;height:clamp(300px,50vw,720px);object-fit:cover;background:#2A2824}
+.band-img--low{height:clamp(280px,40vw,560px);object-position:center 60%}
+.pic{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#2A2824}
+.ground{aspect-ratio:4/3;background:#2A2824;display:flex;align-items:flex-end;padding:16px;font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.1em;color:#A9A397}
+.map{display:block;width:100%;aspect-ratio:4/3;border:0;background:#2A2824;filter:grayscale(.35) sepia(.12)}
+
+/* ---------- セクション ---------- */
+.sec{max-width:1440px;margin:0 auto;padding:clamp(80px,12vw,160px) clamp(20px,4vw,56px)}
+.alt{background:#EAE6DD}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.rule{border:0;border-top:1px solid #D9D3C7;margin:0}
+.sec-head{display:flex;flex-direction:column;gap:14px;margin-bottom:56px}
+.eyebrow{font-size:12px;letter-spacing:0.3em;color:#9A4A2E}
+.h2{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);letter-spacing:0.06em;line-height:1.4}
+.h3{margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(20px,2vw,24px);letter-spacing:0.05em;line-height:1.5}
+.h3--l{font-size:clamp(22px,2.2vw,30px)}
+.txt{margin:0;font-size:15px;line-height:2.1;color:#3A3732;text-wrap:pretty}
+.num{font-family:'Shippori Mincho',serif;font-size:15px;color:#9A4A2E}
+.note{margin:48px 0 0;font-size:12px;letter-spacing:0.04em;color:#6B655C}
+.stack{display:flex;flex-direction:column;gap:22px}
+.mt{margin-top:56px}
+
+/* ---------- 並べ方（auto-fit で折り返す） ---------- */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:56px 80px;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:48px 40px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:40px 28px}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:40px 64px;align-items:center}
+.split--rev{direction:rtl}
+.split--rev>*{direction:ltr}
+.split-body{display:flex;flex-direction:column;gap:22px;max-width:520px}
+.side{display:flex;flex-wrap:wrap;gap:40px 80px;align-items:flex-start}
+.side>:first-child{flex:1 1 240px}
+.side>:last-child{flex:3 1 min(100%,560px);min-width:0}
+
+/* 特徴・項目 */
+.item{display:flex;flex-direction:column;gap:16px;border-top:1px solid #1D1B18;padding-top:20px}
+
+/* 仕様表（会社概要と同じ罫線表） */
+.spec{margin:0;display:grid;grid-template-columns:minmax(96px,150px) minmax(0,1fr);font-size:14px;line-height:1.9}
+.spec dt{padding:16px 0;border-top:1px solid #D9D3C7;color:#6B655C}
+.spec dd{margin:0;padding:16px 0;border-top:1px solid #D9D3C7}
+.spec dt:last-of-type,.spec dd:last-of-type{border-bottom:1px solid #D9D3C7}
+
+/* チップ */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid #1D1B18;padding:8px 18px;font-size:14px;letter-spacing:0.06em;line-height:1.6}
+
+/* 流れ（番号つき） */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0 28px}
+.steps li{border-top:1px solid #1D1B18;padding:28px 0 32px;display:flex;flex-direction:column;gap:18px}
+.step-n{font-family:'Shippori Mincho',serif;font-size:clamp(44px,4.4vw,64px);line-height:1;letter-spacing:0.02em}
+.step-t{font-family:'Shippori Mincho',serif;font-size:19px;letter-spacing:0.05em;line-height:1.6}
+
+/* ボタン */
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:16px;background:#1D1B18;color:#F3F0E9;padding:18px 36px;font-size:14px;letter-spacing:0.1em}
+.btn:hover{background:#9A4A2E;color:#F3F0E9}
+
+/* 写真カード（トップの事業カードと同じ組み方） */
+.card{display:flex;flex-direction:column;gap:18px}
+.card-t{display:flex;align-items:baseline;gap:14px;border-top:1px solid #1D1B18;padding-top:14px}
+.card-n{font-family:'Shippori Mincho',serif;font-size:14px;color:#9A4A2E}
+.card-name{font-family:'Shippori Mincho',serif;font-size:20px;letter-spacing:0.06em;line-height:1.5}
+.card-go{margin-left:auto;font-size:14px}
+.card-sub{margin:-6px 0 0;font-size:13px;color:#6B655C;letter-spacing:0.04em}
+
+/* 罫線の行リンク（運営サイト） */
+.rows{display:flex;flex-direction:column}
+.row{display:flex;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid #D9D3C7;padding:22px 0;font-family:'Shippori Mincho',serif;font-size:20px}
+.row:last-child{border-bottom:1px solid #D9D3C7}
+.row-go{font-size:14px}
+.names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #D9D3C7}
+.names span{padding:22px 0;border-bottom:1px solid #D9D3C7;font-size:16px}
+
+/* 大きな数字 */
+.stat{border-top:1px solid #1D1B18;padding:32px 0;display:flex;flex-direction:column;gap:16px}
+.stat-l{font-size:15px;letter-spacing:0.1em;color:#6B655C}
+.stat-v{font-family:'Shippori Mincho',serif;font-size:clamp(64px,8vw,120px);line-height:1;letter-spacing:0.02em}
+.stat-v small{font-size:0.3em;margin-left:8px}
+
+/* 一覧表 */
+.tbl-wrap{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7}
+.tbl th{text-align:left;font-weight:400;font-size:12px;letter-spacing:0.2em;color:#6B655C;padding:0 16px 14px 0;border-bottom:1px solid #1D1B18;white-space:nowrap}
+.tbl td{padding:20px 16px 20px 0;border-bottom:1px solid #D9D3C7;vertical-align:baseline}
+.tbl td:first-child{font-family:'Shippori Mincho',serif;font-size:18px;letter-spacing:0.04em}
+
+/* 問い合わせの帯 */
+.cta{background:#EAE6DD}
+.cta-in{max-width:1440px;margin:0 auto;padding:clamp(72px,10vw,128px) clamp(20px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px 80px;align-items:end}
+.cta-act{display:flex;flex-wrap:wrap;align-items:center;gap:20px 36px}
+.cta-tel{display:flex;flex-direction:column;gap:8px}
+.cta-tel span{font-size:12px;letter-spacing:0.2em;color:#6B655C}
+.cta-tel a{font-family:'Shippori Mincho',serif;font-size:clamp(30px,3.6vw,46px);letter-spacing:0.04em;line-height:1}
+
+/* 問い合わせフォーム */
+.form{display:flex;flex-direction:column;gap:32px}
+.form fieldset{border:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.form legend{font-size:14px;margin-bottom:14px;padding:0}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:10px}
+.opt{display:flex;align-items:center;gap:10px;border:1px solid #D9D3C7;padding:14px 16px;font-size:14px;cursor:pointer}
+.opt input,.agree input{accent-color:#9A4A2E}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}
+.fld{display:flex;flex-direction:column;gap:8px;font-size:14px}
+.fld input{border:none;border-bottom:1px solid #1D1B18;border-radius:0;background:transparent;padding:12px 2px;font-size:16px;color:#1D1B18;min-width:0}
+.fld textarea{border:1px solid #D9D3C7;border-radius:0;background:#FBFAF6;padding:14px;font-size:16px;color:#1D1B18;resize:vertical}
+.fld input:focus,.fld textarea:focus{border-color:#9A4A2E}
+.privacy{border:1px solid #D9D3C7;background:#FBFAF6;padding:24px clamp(18px,3vw,28px);display:flex;flex-direction:column;gap:12px}
+.privacy .note{margin:0}
+.agree{display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer}
+.submit{display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:12px}
+.submit button{background:#1D1B18;color:#F3F0E9;border:none;padding:20px 72px;font-size:15px;letter-spacing:0.14em;cursor:pointer;font-family:inherit}
+.submit button:hover{background:#9A4A2E}
+.sent{font-size:13px;color:#9A4A2E}
+.telbox{border-top:1px solid #1D1B18;border-bottom:1px solid #1D1B18;padding:28px 0;display:flex;flex-direction:column;gap:12px}
+.telbox a{font-family:'Shippori Mincho',serif;font-size:clamp(30px,3.4vw,40px);letter-spacing:0.04em;line-height:1.2}
+
+/* ---------- フッター ---------- */
+.ft{background:#1D1B18;color:#CFC8BA}
+.ft-in{max-width:1440px;margin:0 auto;padding:72px clamp(20px,4vw,56px) 40px;display:flex;flex-direction:column;gap:48px}
+.ft-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px 56px}
+.ft-brand{display:flex;flex-direction:column;gap:4px}
+.ft-brand span:first-child{font-family:'Shippori Mincho',serif;font-size:22px;color:#F3F0E9;letter-spacing:0.08em}
+.ft-brand span:last-child{font-size:10px;letter-spacing:0.28em}
+.ft-col{display:flex;flex-direction:column;gap:6px;font-size:13px;line-height:1.8}
+.ft-col>span:first-child{color:#F3F0E9}
+.ft-col a{color:#F3F0E9;font-family:'Shippori Mincho',serif;font-size:20px}
+.ft-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid #3A3732;padding-top:24px;font-size:12px;color:#A9A397}
+.side>.sec-head{margin-bottom:0}

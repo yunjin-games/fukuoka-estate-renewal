@@ -8,216 +8,30 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Sans+Condensed:wght@500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --paper:#fcfcfb;
-  --ink:#22252a;
-  --graphite:#5b6470;
-  --rule:#c9ced4;
-  --grid:#eef1f4;
-  --blue:#1f5fbf;     /* 製図の青 — 唯一のアクセント */
-  --blue-weak:#e8eff9;
-  --red:#c8412d;      /* 必須マークだけに使う */
-  --sans:"IBM Plex Sans JP",system-ui,sans-serif;
-  --cond:"IBM Plex Sans Condensed","IBM Plex Sans JP",sans-serif;
-  --wrap:1200px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 40px}
-.grid-bg{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:24px 24px}
-
-/* header */
-header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1.5px solid var(--ink)}
-.hd{display:flex;align-items:stretch;height:72px}
-.logo{display:flex;flex-direction:column;justify-content:center;padding-right:28px;border-right:1px solid var(--rule);text-decoration:none;white-space:nowrap}
-.logo b{font-size:18px;letter-spacing:.06em}
-.logo span{font-family:var(--cond);font-size:11.5px;color:var(--graphite);letter-spacing:.06em}
-nav{display:flex;margin-left:auto}
-nav a{display:flex;align-items:center;padding:0 20px;border-left:1px solid var(--rule);text-decoration:none;font-size:14px;font-weight:500}
-nav a:hover{background:var(--blue-weak);color:var(--blue)}
-.hd .tel{display:flex;flex-direction:column;justify-content:center;padding:0 22px;border-left:1px solid var(--rule);text-decoration:none;font-family:var(--cond);font-weight:600;font-size:19px;line-height:1.2}
-.hd .tel small{font-family:var(--sans);font-size:10.5px;color:var(--graphite);font-weight:400}
-.hd .cta{display:flex;align-items:center;padding:0 24px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:14px}
-.hd .cta:hover{background:#174c9a}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;font-weight:700;font-size:15px;text-decoration:none;border:1.5px solid var(--ink);font-family:var(--sans);cursor:pointer;background:transparent;color:var(--ink)}
-.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn.primary:hover{background:#174c9a}
-.btn:not(.primary):hover{background:var(--ink);color:#fff}
-
-/* hero */
-.hero{border-bottom:1.5px solid var(--ink)}
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;min-height:620px;align-items:center}
-.hero h1 span{white-space:nowrap}
-.hero h1{font-size:46px;line-height:1.38;font-weight:700;letter-spacing:.02em;margin-bottom:28px}
-.hero p{font-size:16.5px;color:var(--graphite);max-width:470px;margin-bottom:36px}
-.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
-.elev{width:100%;height:auto}
-.elev .ln{stroke:var(--ink);stroke-width:1.4;fill:none}
-.elev .thin{stroke:var(--graphite);stroke-width:.8;fill:none}
-.elev .win{fill:var(--blue-weak);stroke:var(--graphite);stroke-width:.8}
-.elev .dim{stroke:var(--blue);stroke-width:.9;fill:none}
-.elev text{font-family:var(--cond);font-size:12px;fill:var(--blue)}
-.elev .lbl{fill:var(--ink);font-family:var(--sans);font-size:12px}
-@media (prefers-reduced-motion:no-preference){
-  .elev .draw{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2.2s .15s ease-out forwards}
-  .elev .fade{opacity:0;animation:fade .8s 1.6s forwards}
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
-}
-
-/* section heads: 図面の表題のように、名称と縮尺の代わりに一言 */
-section{padding:104px 0;border-bottom:1.5px solid var(--ink)}
-.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end;margin-bottom:52px;padding-bottom:20px;border-bottom:1px solid var(--rule)}
-.sh h2{font-size:34px;line-height:1.4;font-weight:700;letter-spacing:.03em}
-.sh p{color:var(--graphite);font-size:15.5px}
-
-/* シリーズ — 4枚の図面 */
-.sheets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--ink)}
-.sheet{display:flex;flex-direction:column;background:#fff}
-.sheet + .sheet{border-left:1px solid var(--rule)}
-.sheet .fig{aspect-ratio:1/1;border-bottom:1px solid var(--rule);display:flex;align-items:flex-end;justify-content:center;padding:20px 18px 0}
-.sheet .fig svg{width:100%;height:100%}
-.sheet .fig .ln{stroke:var(--ink);stroke-width:1.3;fill:none}
-.sheet .fig .thin{stroke:var(--graphite);stroke-width:.8;fill:none}
-.sheet .fig .win{fill:var(--blue-weak);stroke:var(--graphite);stroke-width:.8}
-.sheet .fig .acc{stroke:var(--blue);stroke-width:1.2;fill:none}
-.sheet .fig text{font-family:var(--cond);font-size:10px;fill:var(--blue)}
-.sheet .tb{padding:22px 22px 26px}
-.sheet h3{font-size:19px;font-weight:700;margin-bottom:6px}
-.sheet p{font-size:14px;color:var(--graphite)}
-.sheet .kind{display:inline-block;margin-top:14px;font-size:12px;color:var(--blue);border:1px solid var(--blue);padding:0 8px}
-
-/* 仲介 */
-.deals{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
-.deal{border:1.5px solid var(--ink);background:#fff}
-.deal .ph{position:relative;height:300px;margin:28px 28px 0 44px;background:#f1f3f5;display:flex;align-items:center;justify-content:center;color:var(--graphite);font-size:13px}
-.deal .ph.photo{background:url(../shared/img/fukuoka.jpg) 40% 50%/cover}
-/* 寸法線 */
-.deal .ph::before{content:attr(data-w);position:absolute;left:0;right:0;top:-22px;height:12px;border:1px solid var(--blue);border-bottom:0;font-family:var(--cond);font-size:11px;color:var(--blue);text-align:center;line-height:0;padding-top:0}
-.deal .ph::after{content:"";position:absolute;left:-18px;top:0;bottom:0;width:10px;border:1px solid var(--blue);border-right:0}
-.deal .tx{padding:28px 32px 34px}
-.deal h3{font-size:24px;line-height:1.5;margin-bottom:14px}
-.deal p{color:var(--graphite);font-size:15px}
-.deal .spec{display:flex;flex-wrap:wrap;gap:0;margin-top:22px;border-top:1px solid var(--rule)}
-.deal .spec span{padding:8px 14px 0 0;margin-right:14px;font-size:13px;font-weight:500}
-.intro{max-width:720px;font-size:17px;margin:-20px 0 48px}
-
-/* 実績 — 寸法線で数字を受ける */
-.facts .row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
-.fact .val{font-family:var(--cond);font-weight:600;font-size:96px;line-height:1;letter-spacing:-.01em}
-.fact .val small{font-family:var(--sans);font-size:24px;font-weight:700;margin-left:6px}
-.fact .dimline{position:relative;height:14px;margin:18px 0 12px;border-left:1px solid var(--blue);border-right:1px solid var(--blue)}
-.fact .dimline::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:1px solid var(--blue)}
-.fact .cap{font-size:15px;font-weight:500}
-.facts .note{margin-top:28px;font-size:13px;color:var(--graphite)}
-
-/* 運営・関連 */
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
-.two h3{font-size:20px;margin-bottom:14px}
-.lk{display:grid;grid-template-columns:1fr auto;align-items:center;padding:20px 22px;border:1.5px solid var(--ink);text-decoration:none;background:#fff;margin-bottom:-1.5px}
-.lk:hover{background:var(--blue-weak)}
-.lk b{font-size:17px}
-.lk span{font-size:13px;color:var(--blue);font-weight:700}
-.ptn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1.5px solid var(--ink);border-left:1.5px solid var(--ink)}
-.ptn li{list-style:none;padding:20px 22px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:#fff;font-weight:500}
-
-/* 会社概要 = 図面の表題欄 */
-.co{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:start}
-.titleblock{border:2.5px solid var(--ink);background:#fff}
-.titleblock .head{display:grid;grid-template-columns:1fr auto;border-bottom:2.5px solid var(--ink)}
-.titleblock .head div{padding:18px 22px}
-.titleblock .head b{display:block;font-size:22px}
-.titleblock .head span{font-family:var(--cond);color:var(--graphite);font-size:13px}
-.titleblock .head .lic{border-left:1px solid var(--ink);font-size:12.5px;text-align:right;line-height:1.6}
-.titleblock dl{display:grid;grid-template-columns:140px 1fr}
-.titleblock dt,.titleblock dd{padding:13px 18px;border-bottom:1px solid var(--rule);font-size:14.5px}
-.titleblock dt{border-right:1px solid var(--rule);font-size:12.5px;color:var(--graphite);font-weight:500;background:#fafbfc}
-.titleblock dl > :nth-last-child(-n+2){border-bottom:0}
-.titleblock ol{padding-left:1.2em}
-.mapbox{border:1.5px solid var(--ink);background:#fff;margin-bottom:24px}
-.mapbox iframe{display:block;width:100%;height:250px;border:0;filter:grayscale(1) contrast(1.05)}
-.mapbox p{padding:12px 16px;border-top:1px solid var(--rule);font-size:13.5px}
-.mapbox p b{display:block;font-size:14px}
-
-/* 問い合わせ = 申込用紙 */
-.form{border:2.5px solid var(--ink);background:#fff;max-width:900px}
-.form .fr{display:grid;grid-template-columns:220px 1fr;border-bottom:1px solid var(--rule)}
-.form .fr:last-of-type{border-bottom:0}
-.form .lab{padding:20px 22px;border-right:1px solid var(--rule);font-weight:700;font-size:14.5px;background:#fafbfc}
-.form .lab .req{color:var(--red);margin-right:4px}
-.form .in{padding:14px 18px}
-.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.opts label{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--rule);cursor:pointer;font-size:15px}
-.opts input{accent-color:var(--blue);width:18px;height:18px}
-.opts label:has(input:checked){border-color:var(--blue);background:var(--blue-weak)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-input[type=text],input[type=email],input[type=tel],textarea{width:100%;font:inherit;font-size:16px;padding:11px 12px;border:1px solid var(--rule);background:var(--paper)}
-input:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px var(--blue-weak)}
-textarea{min-height:150px;resize:vertical}
-.send{display:flex;align-items:center;gap:20px;padding:22px;border-top:2.5px solid var(--ink)}
-.send small{font-size:13px;color:var(--graphite)}
-
-footer{padding:48px 0 32px;font-size:13.5px}
-.ft{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px;padding-bottom:28px;border-bottom:1px solid var(--rule)}
-.ft b{display:block;font-size:16px}
-.ft h4{font-size:12.5px;color:var(--graphite);font-weight:500}
-.cp{padding-top:16px;font-family:var(--cond);color:var(--graphite);font-size:12.5px}
-
-@media (max-width:1060px){
-  nav{display:none}
-  .hero .wrap,.sh,.deals,.two,.co,.facts .row{grid-template-columns:1fr}
-  .hero .wrap{padding-top:56px;padding-bottom:40px;min-height:0}
-  .sheets{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .sheet:nth-child(3){border-left:0}
-  .sheet:nth-child(n+3){border-top:1px solid var(--rule)}
-  .ft{grid-template-columns:1fr}
-}
-@media (max-width:620px){
-  .wrap{padding:0 16px}
-  .hd{height:60px}
-  .logo{padding-right:12px;border-right:0}
-  .logo b{font-size:15px}
-  .hd .tel{display:none}
-  .hd .cta{margin-left:auto;padding:0 14px;font-size:13px}
-  .hero h1{font-size:32px}
-  section{padding:68px 0}
-  .sh h2{font-size:26px}
-  .sheets{grid-template-columns:1fr}
-  .sheet .fig{aspect-ratio:auto;height:200px}
-  .sheet .fig svg{width:auto;max-width:100%}
-  .sheet + .sheet{border-left:0;border-top:1px solid var(--rule)}
-  .deal .ph{height:200px;margin:28px 16px 0 32px}
-  .deal .tx{padding:22px 18px 26px}
-  .fact .val{font-size:68px}
-  .titleblock .head{grid-template-columns:1fr}
-  .titleblock .head .lic{border-left:0;border-top:1px solid var(--ink);text-align:left}
-  .titleblock dl{grid-template-columns:96px 1fr}
-  .titleblock dt,.titleblock dd{padding:12px 10px}
-  .form .fr{grid-template-columns:1fr}
-  .form .lab{border-right:0;border-bottom:1px solid var(--rule);padding:12px 16px}
-  .opts,.split{grid-template-columns:1fr}
-  .ptn{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <div class="wrap hd">
-    <a class="logo" href="#"><b>福岡エステート株式会社</b><span>FUKUOKA ESTATE CO., LTD.</span></a>
+    <a class="logo" href="index.html"><b>福岡エステート株式会社</b><span>FUKUOKA ESTATE CO., LTD.</span></a>
     <nav aria-label="メインメニュー">
-      <a href="#business">事業内容</a>
-      <a href="#broker">物件情報</a>
-      <a href="#facts">実績</a>
-      <a href="#company">会社概要</a>
+      <div class="dd">
+        <a href="index.html#business">事業内容</a>
+        <div class="sub">
+          <a href="residence.html">レジデンスシリーズ</a>
+          <a href="tenant.html">テナントシリーズ</a>
+          <a href="parking.html">駐車場管理システム</a>
+          <a href="management.html">管理システム</a>
+        </div>
+      </div>
+      <a href="property.html">物件情報</a>
+      <a href="results.html">実績</a>
+      <a href="company.html">会社概要</a>
     </nav>
     <a class="tel" href="tel:0924092585"><small>代表電話</small>092-409-2585</a>
-    <a class="cta" href="#contact">資料請求・お問い合わせ</a>
+    <a class="cta" href="contact.html"><span class="long">資料請求・</span>お問い合わせ</a>
+    <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" onclick="var o=this.closest('header').classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
   </div>
 </header>
 
@@ -228,8 +42,8 @@ footer{padding:48px 0 32px;font-size:13.5px}
       <h1><span>建物の企画から、</span><br><span>売買・管理まで。</span><br><span>福岡の不動産を一社で。</span></h1>
       <p>マンションの企画・開発、一棟ビルや戸別物件の売買・仲介、建物と駐車場の管理。福岡市を中心に、熊本・鹿児島まで九州各地で手がけています。</p>
       <div class="btns">
-        <a class="btn primary" href="#contact">物件のご相談</a>
-        <a class="btn" href="#company">会社概要</a>
+        <a class="btn primary" href="contact.html">物件のご相談</a>
+        <a class="btn" href="company.html">会社概要</a>
       </div>
     </div>
     <svg class="elev" viewBox="0 0 620 520" role="img" aria-label="レジデンスシリーズの立面図（イメージ）">
@@ -283,16 +97,16 @@ footer{padding:48px 0 32px;font-size:13.5px}
       <p>土地の選定から建物の企画、完成後の運営までを一貫して手がけています。用途ごとに四つのシリーズがあります。</p>
     </div>
     <div class="sheets">
-      <article class="sheet">
+      <a class="sheet" href="residence.html">
         <div class="fig"><svg viewBox="0 0 200 200" aria-hidden="true">
           <line class="ln" x1="10" y1="190" x2="190" y2="190"/>
           <path class="ln" d="M60 190 V30 H140 V190"/>
           <g class="win"><rect x="70" y="42" width="24" height="14"/><rect x="106" y="42" width="24" height="14"/><rect x="70" y="66" width="24" height="14"/><rect x="106" y="66" width="24" height="14"/><rect x="70" y="90" width="24" height="14"/><rect x="106" y="90" width="24" height="14"/><rect x="70" y="114" width="24" height="14"/><rect x="106" y="114" width="24" height="14"/><rect x="70" y="138" width="24" height="14"/><rect x="106" y="138" width="24" height="14"/></g>
           <rect class="acc" x="88" y="164" width="24" height="26"/>
         </svg></div>
-        <div class="tb"><h3>レジデンスシリーズ</h3><p>単身者からご家族まで、暮らしやすさを考えた賃貸・分譲マンション。</p><span class="kind">住まい</span></div>
-      </article>
-      <article class="sheet">
+        <div class="tb"><h3>レジデンスシリーズ</h3><p>単身者からご家族まで、暮らしやすさを考えた賃貸・分譲マンション。</p><span class="kind">住まい</span><span class="go">図面を見る →</span></div>
+      </a>
+      <a class="sheet" href="tenant.html">
         <div class="fig"><svg viewBox="0 0 200 200" aria-hidden="true">
           <line class="ln" x1="10" y1="190" x2="190" y2="190"/>
           <path class="ln" d="M40 190 V60 H160 V190"/>
@@ -300,9 +114,9 @@ footer{padding:48px 0 32px;font-size:13.5px}
           <line class="acc" x1="34" y1="154" x2="166" y2="154"/>
           <rect class="acc" x="48" y="160" width="46" height="30"/><rect class="acc" x="106" y="160" width="46" height="30"/>
         </svg></div>
-        <div class="tb"><h3>テナントシリーズ</h3><p>店舗・事務所として使える、立地を活かしたテナントビル。</p><span class="kind">店舗・事務所</span></div>
-      </article>
-      <article class="sheet">
+        <div class="tb"><h3>テナントシリーズ</h3><p>店舗・事務所として使える、立地を活かしたテナントビル。</p><span class="kind">店舗・事務所</span><span class="go">図面を見る →</span></div>
+      </a>
+      <a class="sheet" href="parking.html">
         <div class="fig"><svg viewBox="0 0 200 200" aria-hidden="true">
           <rect class="ln" x="20" y="40" width="160" height="150"/>
           <g class="thin"><line x1="20" y1="100" x2="180" y2="100"/><line x1="20" y1="130" x2="180" y2="130"/>
@@ -312,9 +126,9 @@ footer{padding:48px 0 32px;font-size:13.5px}
           <text x="92" y="74">空</text>
           <text x="30" y="74">P1</text><text x="62" y="74">P2</text><text x="126" y="74">P4</text><text x="158" y="74">P5</text>
         </svg></div>
-        <div class="tb"><h3>駐車場管理システム</h3><p>契約・空き状況・入金を一元管理する、自社運営の駐車場管理サービス。</p><span class="kind">運営サービス</span></div>
-      </article>
-      <article class="sheet">
+        <div class="tb"><h3>駐車場管理システム</h3><p>契約・空き状況・入金を一元管理する、自社運営の駐車場管理サービス。</p><span class="kind">運営サービス</span><span class="go">図面を見る →</span></div>
+      </a>
+      <a class="sheet" href="management.html">
         <div class="fig"><svg viewBox="0 0 200 200" aria-hidden="true">
           <line class="ln" x1="10" y1="190" x2="190" y2="190"/>
           <path class="ln" d="M30 190 V80 L100 40 L170 80 V190"/>
@@ -322,8 +136,8 @@ footer{padding:48px 0 32px;font-size:13.5px}
           <g class="win"><rect x="44" y="92" width="40" height="18"/><rect x="116" y="92" width="40" height="18"/><rect x="44" y="128" width="40" height="18"/><rect x="116" y="128" width="40" height="18"/><rect x="44" y="164" width="40" height="18"/></g>
           <path class="acc" d="M118 166 l8 8 l16 -18"/>
         </svg></div>
-        <div class="tb"><h3>管理システム</h3><p>入居者・契約・修繕の情報をまとめて扱う、物件管理のための仕組み。</p><span class="kind">運営サービス</span></div>
-      </article>
+        <div class="tb"><h3>管理システム</h3><p>入居者・契約・修繕の情報をまとめて扱う、物件管理のための仕組み。</p><span class="kind">運営サービス</span><span class="go">図面を見る →</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -337,7 +151,7 @@ footer{padding:48px 0 32px;font-size:13.5px}
     <p class="intro">お客様の目的や条件に合わせた有益な資産活用をご提案。ワンルームマンションから１棟ビル・マンションなど物件丸ごとのお取引まで、経験と実績を積み重ねてきたスタッフが懇切丁寧にサポートいたします。</p>
     <div class="deals">
       <article class="deal">
-        <div class="ph photo" data-w="小・中規模 〜 70戸超" role="img" aria-label="一棟マンションの写真（差し替え予定）"></div>
+        <div class="ph photo" data-w="小・中規模 〜 70戸超" role="img" aria-label="一棟マンションの写真（差し替え予定）"><span class="dimtx">小・中規模 〜 70戸超</span></div>
         <div class="tx">
           <h3>１棟ビル・マンションの売買・仲介</h3>
           <p>福岡市を中心に、熊本や鹿児島まで九州各地において、小・中規模から70戸を超える規模のマンションまで、多種多様な規模の売買・仲介を手掛けています。</p>
@@ -345,7 +159,7 @@ footer{padding:48px 0 32px;font-size:13.5px}
         </div>
       </article>
       <article class="deal">
-        <div class="ph" data-w="1R 〜 2LDK・ファミリー">戸別物件の写真</div>
+        <div class="ph photo-interior" data-w="1R 〜 2LDK・ファミリー" role="img" aria-label="1LDKの居室の写真（差し替え予定）"><span class="dimtx">1R 〜 2LDK・ファミリー</span></div>
         <div class="tx">
           <h3>戸別物件の売買・仲介</h3>
           <p>需要の高い1R〜2LDKの単身用の物件から、ご夫婦・家族対応の広めの物件も対応いたします。お気軽にご相談ください。</p>
@@ -353,6 +167,7 @@ footer{padding:48px 0 32px;font-size:13.5px}
         </div>
       </article>
     </div>
+    <div class="more"><a class="btn" href="property.html">物件情報を見る</a></div>
   </div>
 </section>
 
@@ -363,6 +178,7 @@ footer{padding:48px 0 32px;font-size:13.5px}
       <div class="fact"><div class="val">32<small>件</small></div><div class="dimline"></div><div class="cap">自社保有物件</div></div>
       <div class="fact"><div class="val">6<small>件</small></div><div class="dimline"></div><div class="cap">2026年 新プロジェクト</div></div>
     </div>
+    <div class="more"><a class="btn" href="results.html">実績を見る</a></div>
   </div>
 </section>
 
@@ -414,6 +230,7 @@ footer{padding:48px 0 32px;font-size:13.5px}
         </div>
       </div>
     </div>
+    <div class="more"><a class="btn" href="company.html">会社概要を見る</a></div>
   </div>
 </section>
 
@@ -447,6 +264,17 @@ footer{padding:48px 0 32px;font-size:13.5px}
       <div><h4>本社</h4><p>〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</p></div>
       <div><h4>東区営業所</h4><p>〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</p></div>
     </div>
+    <nav class="fnav" aria-label="サイトマップ">
+      <a href="index.html">TOP</a>
+      <a href="residence.html">レジデンスシリーズ</a>
+      <a href="tenant.html">テナントシリーズ</a>
+      <a href="parking.html">駐車場管理システム</a>
+      <a href="management.html">管理システム</a>
+      <a href="property.html">物件情報</a>
+      <a href="results.html">実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
     <div class="cp">© 2026 Fukuoka Estate Co., Ltd.</div>
   </div>
 </footer>

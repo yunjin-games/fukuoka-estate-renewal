@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>資料請求・お問い合わせ | 福岡エステート株式会社</title>
+<meta name="description" content="売却・購入・賃貸のご相談、物件資料のご請求はこちらから。担当者よりご連絡いたします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 試案F · 街と写真 — 下層ページ。部品は style.css（トップページのインライン値と同じ数値）。 -->
+
+<header class="hd">
+  <div class="hd-in">
+    <a href="index.html" class="brand">
+      <span class="brand-ja">福岡エステート</span>
+      <span class="brand-en">FUKUOKA ESTATE CO., LTD.</span>
+    </a>
+    <nav class="gnav" aria-label="メインメニュー">
+      <a href="index.html#business">事業内容</a>
+      <a href="property.html">物件情報</a>
+      <a href="results.html">実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="contact.html" aria-current="page">お問い合わせ</a>
+    </nav>
+    <div class="hd-act">
+      <a href="tel:0924092585" class="hd-tel">092-409-2585</a>
+      <a href="contact.html" class="hd-btn">資料請求・お問い合わせ</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="ph">
+  <nav aria-label="パンくずリスト">
+    <ol class="crumb">
+      <li><a href="index.html">TOP</a></li>
+      <li aria-current="page">資料請求・お問い合わせ</li>
+    </ol>
+  </nav>
+  <div class="ph-grid">
+    <div class="ph-title">
+      <span class="eyebrow">CONTACT</span>
+      <h1 class="h1">資料請求・<br>お問い合わせ</h1>
+    </div>
+    <p class="lead">売却・購入・賃貸のご相談、物件資料のご請求はこちらから。担当者よりご連絡いたします。</p>
+  </div>
+</section>
+
+<div class="wrap"><hr class="rule"></div>
+
+<section class="sec" style="padding-top:clamp(56px,8vw,104px)">
+  <div class="side">
+    <div class="stack" style="gap:28px">
+      <span class="eyebrow">01 — TEL</span>
+      <div class="telbox">
+        <span style="font-size:14px;letter-spacing:0.06em">お電話でのお問い合わせ</span>
+        <a href="tel:0924092585">092-409-2585</a>
+        <span style="font-size:13px;color:#6B655C">受付時間　平日 9:00〜18:00</span>
+      </div>
+      <p class="note" style="margin:0">※ 掲載内容はイメージです。</p>
+    </div>
+    <div class="stack" style="gap:28px">
+      <div class="sec-head" style="margin:0">
+        <span class="eyebrow">02 — FORM</span>
+        <h2 class="h2">フォームでのお問い合わせ</h2>
+        <p style="margin:0;font-size:13px;color:#6B655C">※は必須項目です</p>
+      </div>
+      <form class="form" onsubmit="event.preventDefault();document.getElementById('sent-msg').hidden=false">
+        <fieldset>
+          <legend>※お問い合わせ項目</legend>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="cat" value="sell" required>不動産売却相談（売りたい）</label>
+            <label class="opt"><input type="radio" name="cat" value="buy">不動産購入相談（買いたい）</label>
+            <label class="opt"><input type="radio" name="cat" value="rent">賃貸（借りたい）</label>
+            <label class="opt"><input type="radio" name="cat" value="other">その他</label>
+          </div>
+        </fieldset>
+        <div class="fields">
+          <label class="fld">※お名前（姓）<input name="last-name" autocomplete="family-name" required></label>
+          <label class="fld">※お名前（名）<input name="first-name" autocomplete="given-name" required></label>
+        </div>
+        <div class="fields">
+          <label class="fld">※メールアドレス<input type="email" name="email" autocomplete="email" required></label>
+          <label class="fld">※電話番号<input type="tel" name="tel" autocomplete="tel" required></label>
+        </div>
+        <label class="fld">※ご住所<input name="address" autocomplete="street-address" required></label>
+        <label class="fld">お問い合わせ内容<textarea name="message" rows="6"></textarea></label>
+        <div class="privacy">
+          <h3 class="h3" style="font-size:18px">個人情報の取り扱い</h3>
+          <p class="txt" style="font-size:14px;line-height:2">お預かりした個人情報は、お問い合わせへの回答と物件情報のご案内のためにのみ利用し、法令に基づく場合を除き第三者に提供しません。</p>
+          <p class="note">※ 掲載内容はイメージです。</p>
+        </div>
+        <label class="agree"><input type="checkbox" name="agree" required>個人情報の取り扱いに同意する</label>
+        <div class="submit">
+          <button type="submit">送信する</button>
+          <span id="sent-msg" class="sent" role="status" hidden>送信しました（デザイン見本のため実際には送信されません）</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-cols">
+      <div class="ft-brand">
+        <span>福岡エステート株式会社</span>
+        <span>FUKUOKA ESTATE CO., LTD.</span>
+      </div>
+      <div class="ft-col"><span>本社</span><span>〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</span></div>
+      <div class="ft-col"><span>東区営業所</span><span>〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</span></div>
+      <div class="ft-col"><span>TEL</span><a href="tel:0924092585">092-409-2585</a></div>
+    </div>
+    <div class="ft-bottom">
+      <span>宅地建物取引業免許 福岡県知事（2）19743</span>
+      <span>© Fukuoka Estate Co., Ltd.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

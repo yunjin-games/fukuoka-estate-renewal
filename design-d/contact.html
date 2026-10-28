@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>資料請求・お問い合わせ | 福岡エステート株式会社</title>
+<meta name="description" content="売却・購入・賃貸のご相談、物件資料のご請求はこちらから。担当者よりご連絡いたします。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-strip kenjo" aria-hidden="true"></div>
+<header>
+  <div class="wrap hd">
+    <a class="logo" href="index.html">福岡エステート株式会社<small>Fukuoka Estate Co., Ltd.</small></a>
+    <nav aria-label="メインメニュー">
+      <a href="index.html#business">事業内容</a>
+      <a href="property.html">物件情報</a>
+      <a href="results.html">実績</a>
+      <a href="company.html">会社概要</a>
+    </nav>
+    <a class="tel" href="tel:0924092585"><span>代表電話</span>092-409-2585</a>
+    <a class="btn btn-beni" href="contact.html" aria-current="page"><span class="long">資料請求・</span>お問い合わせ</a>
+    <button class="menu-btn" type="button" aria-label="メニュー" aria-expanded="false" onclick="var o=this.closest('header').classList.toggle('open');this.setAttribute('aria-expanded',o)"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></button>
+  </div>
+</header>
+
+<main>
+<div class="page-head no-photo">
+  <div class="ph-copy">
+    <nav class="crumb" aria-label="パンくずリスト"><ol><li><a href="index.html">TOP</a></li><li aria-current="page">資料請求・お問い合わせ</li></ol></nav>
+    <div class="ph-body">
+      <h1>資料請求・<br>お問い合わせ</h1>
+      <div class="ph-rule" aria-hidden="true"></div>
+      <div class="ph-lead">
+        <p class="kind">CONTACT</p>
+        <p>売却・購入・賃貸のご相談、物件資料のご請求はこちらから。担当者よりご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="contact">
+  <div class="wrap contact-grid">
+    <form class="box" onsubmit="event.preventDefault();this.querySelector('.submit small').textContent='送信しました（デザイン見本のため実際には送信されません）';">
+      <fieldset>
+        <legend><span class="req">※</span>お問い合わせ項目</legend>
+        <div class="choice">
+          <label><input type="radio" name="kind" required checked>不動産売却相談（売りたい）</label>
+          <label><input type="radio" name="kind">不動産購入相談（買いたい）</label>
+          <label><input type="radio" name="kind">賃貸（借りたい）</label>
+          <label><input type="radio" name="kind">その他</label>
+        </div>
+      </fieldset>
+      <div class="f">
+        <label class="lb"><span class="req">※</span>お名前</label>
+        <div class="row2">
+          <input type="text" aria-label="姓" placeholder="姓" required autocomplete="family-name">
+          <input type="text" aria-label="名" placeholder="名" required autocomplete="given-name">
+        </div>
+      </div>
+      <div class="f"><label class="lb" for="m"><span class="req">※</span>メールアドレス</label><input id="m" type="email" required autocomplete="email"></div>
+      <div class="f"><label class="lb" for="t"><span class="req">※</span>電話番号</label><input id="t" type="tel" required autocomplete="tel"></div>
+      <div class="f"><label class="lb" for="a"><span class="req">※</span>ご住所</label><input id="a" type="text" required autocomplete="street-address"></div>
+      <div class="f"><label class="lb" for="b">お問い合わせ内容</label><textarea id="b"></textarea></div>
+      <div class="f agree"><label><input type="checkbox" required>個人情報の取り扱いに同意する</label><a href="#privacy">個人情報の取り扱いについて</a></div>
+      <div class="submit"><button class="btn btn-beni" type="submit">送信する</button><small role="status">※は必須項目です</small></div>
+    </form>
+    <aside>
+      <div class="tel-box">
+        <h2>お電話でのお問い合わせ</h2>
+        <a href="tel:0924092585">092-409-2585</a>
+        <p>受付時間　平日 9:00〜18:00</p>
+      </div>
+      <div class="privacy" id="privacy">
+        <h2>個人情報の取り扱い</h2>
+        <p>お預かりした個人情報は、お問い合わせへの回答と物件情報のご案内のためにのみ利用し、法令に基づく場合を除き第三者に提供しません。</p>
+      </div>
+      <p class="img-note">※ 掲載内容はイメージです。</p>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="kenjo" aria-hidden="true"></div>
+  <div class="ft" style="max-width:var(--wrap);margin:0 auto">
+    <div>
+      <a class="logo" href="index.html">福岡エステート株式会社<small>Fukuoka Estate Co., Ltd.</small></a>
+      <p style="margin-top:16px">宅地建物取引業免許 福岡県知事（2）第19743号</p>
+      <p>TEL 092-409-2585</p>
+    </div>
+    <div><h4>本社</h4><p>〒810-0073<br>福岡市中央区舞鶴2丁目8-13 1F</p></div>
+    <div><h4>東区営業所</h4><p>〒812-0053<br>福岡市東区箱崎1丁目28-17<br>KINGS PARK HAKOZAKI 8-9F</p></div>
+  </div>
+  <nav class="ft-links" aria-label="サイトマップ" style="max-width:var(--wrap);margin:0 auto">
+    <a href="residence.html">レジデンスシリーズ</a>
+    <a href="tenant.html">テナントシリーズ</a>
+    <a href="parking.html">駐車場管理システム</a>
+    <a href="management.html">管理システム</a>
+    <a href="property.html">物件情報</a>
+    <a href="results.html">実績</a>
+    <a href="company.html">会社概要</a>
+    <a href="contact.html">お問い合わせ</a>
+  </nav>
+  <div class="copy" style="max-width:var(--wrap);margin:0 auto">© 2026 Fukuoka Estate Co., Ltd.</div>
+</footer>
+
+</body>
+</html>

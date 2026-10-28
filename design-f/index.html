@@ -8,18 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-html{scroll-behavior:smooth}
-body{margin:0;background:#F3F0E9;color:#1D1B18;font-family:'Zen Kaku Gothic New',sans-serif;-webkit-font-smoothing:antialiased}
-*{box-sizing:border-box}
-a{color:#1D1B18;text-decoration:none}
-a:hover{color:#9A4A2E}
-input,select,textarea{font-family:inherit}
-.hv1:hover{background:#9A4A2E !important;color:#F3F0E9 !important}
-.hv2:hover{background:#FFFFFF !important;color:#1D1B18 !important}
-.hv3:hover{background:rgba(243,240,233,0.12) !important;color:#F3F0E9 !important}
-.hv4:hover{background:#9A4A2E !important}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--
@@ -34,20 +23,20 @@ input,select,textarea{font-family:inherit}
 
 <header style="position:sticky;top:0;z-index:20;background:rgba(243,240,233,0.94);backdrop-filter:blur(8px);border-bottom:1px solid #D9D3C7">
   <div style="max-width:1440px;margin:0 auto;padding:18px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 32px">
-    <a href="#top" style="display:flex;flex-direction:column;gap:2px">
+    <a href="index.html" style="display:flex;flex-direction:column;gap:2px">
       <span style="font-family:'Shippori Mincho',serif;font-size:22px;font-weight:700;letter-spacing:0.08em">福岡エステート</span>
       <span style="font-size:10px;letter-spacing:0.28em;color:#6B655C">FUKUOKA ESTATE CO., LTD.</span>
     </a>
-    <nav style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;letter-spacing:0.06em">
+    <nav aria-label="メインメニュー" style="display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;letter-spacing:0.06em">
       <a href="#business">事業内容</a>
-      <a href="#property">物件情報</a>
-      <a href="#results">実績</a>
-      <a href="#company">会社概要</a>
-      <a href="#contact">お問い合わせ</a>
+      <a href="property.html">物件情報</a>
+      <a href="results.html">実績</a>
+      <a href="company.html">会社概要</a>
+      <a href="contact.html">お問い合わせ</a>
     </nav>
     <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px">
       <a href="tel:0924092585" style="font-family:'Shippori Mincho',serif;font-size:18px;letter-spacing:0.06em">092-409-2585</a>
-      <a href="#contact" style="background:#1D1B18;color:#F3F0E9;padding:12px 20px;font-size:13px;letter-spacing:0.08em" class="hv1">資料請求・お問い合わせ</a>
+      <a href="contact.html" style="background:#1D1B18;color:#F3F0E9;padding:12px 20px;font-size:13px;letter-spacing:0.08em" class="hv1">資料請求・お問い合わせ</a>
     </div>
   </div>
 </header>
@@ -58,8 +47,8 @@ input,select,textarea{font-family:inherit}
     <span style="font-size:12px;letter-spacing:0.3em;color:#CFC8BA">FUKUOKA — SINCE 2019</span>
     <h1 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(36px,5.6vw,80px);line-height:1.35;letter-spacing:0.04em">福岡の街で、<br>建物と暮らしを<br>つなぐ。</h1>
     <div style="display:flex;flex-wrap:wrap;gap:14px">
-      <a href="#contact" style="background:#F3F0E9;color:#1D1B18;padding:16px 30px;font-size:14px;letter-spacing:0.1em" class="hv2">物件のご相談</a>
-      <a href="#company" style="border:1px solid #F3F0E9;color:#F3F0E9;padding:16px 30px;font-size:14px;letter-spacing:0.1em" class="hv3">会社概要</a>
+      <a href="contact.html" style="background:#F3F0E9;color:#1D1B18;padding:16px 30px;font-size:14px;letter-spacing:0.1em" class="hv2">物件のご相談</a>
+      <a href="company.html" style="border:1px solid #F3F0E9;color:#F3F0E9;padding:16px 30px;font-size:14px;letter-spacing:0.1em" class="hv3">会社概要</a>
     </div>
   </div>
 </section>
@@ -70,22 +59,22 @@ input,select,textarea{font-family:inherit}
     <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:500;font-size:clamp(28px,3.2vw,44px);letter-spacing:0.06em">マンションプロデュース事業</h2>
   </div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:40px 28px">
-    <div style="display:flex;flex-direction:column;gap:18px">
+    <a href="residence.html" style="display:flex;flex-direction:column;gap:18px">
       <div style="aspect-ratio:3/4;background:#2A2824 url(img/residence.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:14px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6B655C"></div>
       <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid #1D1B18;padding-top:14px"><span style="font-family:'Shippori Mincho',serif;font-size:14px;color:#9A4A2E">i</span><span style="font-family:'Shippori Mincho',serif;font-size:20px;letter-spacing:0.06em">レジデンスシリーズ</span></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:18px">
+    </a>
+    <a href="tenant.html" style="display:flex;flex-direction:column;gap:18px">
       <div style="aspect-ratio:3/4;background:#2A2824 url(img/tenant.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:14px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6B655C"></div>
       <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid #1D1B18;padding-top:14px"><span style="font-family:'Shippori Mincho',serif;font-size:14px;color:#9A4A2E">ii</span><span style="font-family:'Shippori Mincho',serif;font-size:20px;letter-spacing:0.06em">テナントシリーズ</span></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:18px">
+    </a>
+    <a href="parking.html" style="display:flex;flex-direction:column;gap:18px">
       <div style="aspect-ratio:3/4;background:#2A2824 url(img/parking.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:14px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6B655C"></div>
       <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid #1D1B18;padding-top:14px"><span style="font-family:'Shippori Mincho',serif;font-size:14px;color:#9A4A2E">iii</span><span style="font-family:'Shippori Mincho',serif;font-size:20px;letter-spacing:0.06em">駐車場管理システム</span></div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:18px">
+    </a>
+    <a href="management.html" style="display:flex;flex-direction:column;gap:18px">
       <div style="aspect-ratio:3/4;background:#2A2824 url(img/lobby.jpg) center/cover no-repeat;display:flex;align-items:flex-end;padding:14px;font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#6B655C"></div>
       <div style="display:flex;align-items:baseline;gap:14px;border-top:1px solid #1D1B18;padding-top:14px"><span style="font-family:'Shippori Mincho',serif;font-size:14px;color:#9A4A2E">iv</span><span style="font-family:'Shippori Mincho',serif;font-size:20px;letter-spacing:0.06em">管理システム</span></div>
-    </div>
+    </a>
   </div>
 </section>
 
@@ -137,8 +126,8 @@ input,select,textarea{font-family:inherit}
   <div style="display:flex;flex-direction:column;gap:24px">
     <span style="font-size:12px;letter-spacing:0.3em;color:#9A4A2E">04 — 運営サイト</span>
     <div style="display:flex;flex-direction:column">
-      <a href="#" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #D9D3C7;padding:22px 0;font-family:'Shippori Mincho',serif;font-size:20px"><span>駐車場管理システム</span><span style="font-size:14px">→</span></a>
-      <a href="#" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #D9D3C7;border-bottom:1px solid #D9D3C7;padding:22px 0;font-family:'Shippori Mincho',serif;font-size:20px"><span>管理システム</span><span style="font-size:14px">→</span></a>
+      <a href="parking.html" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #D9D3C7;padding:22px 0;font-family:'Shippori Mincho',serif;font-size:20px"><span>駐車場管理システム</span><span style="font-size:14px">→</span></a>
+      <a href="management.html" style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #D9D3C7;border-bottom:1px solid #D9D3C7;padding:22px 0;font-family:'Shippori Mincho',serif;font-size:20px"><span>管理システム</span><span style="font-size:14px">→</span></a>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;gap:24px">

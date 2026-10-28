@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ja"><head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>駐車場管理システム | 福岡エステート株式会社</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Noto+Serif+JP:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-container": "#5c4212",
+            "on-secondary-fixed-variant": "#5c4212",
+            "surface-container-lowest": "#0b0e12",
+            "primary-fixed": "#fedeb2",
+            "on-surface-variant": "#d1c5b8",
+            "surface-dim": "#111418",
+            "tertiary-fixed": "#ffe088",
+            "outline": "#998f83",
+            "on-primary-fixed": "#281800",
+            "primary-container": "#c5a880",
+            "surface-container-high": "#272a2e",
+            "on-secondary": "#432c00",
+            "surface-container": "#1d2024",
+            "on-primary": "#402d0f",
+            "inverse-surface": "#e1e2e8",
+            "background": "#111418",
+            "on-tertiary-container": "#503f00",
+            "primary": "#e2c399",
+            "on-tertiary-fixed-variant": "#574500",
+            "surface-tint": "#e0c298",
+            "error": "#ffb4ab",
+            "on-secondary-fixed": "#281900",
+            "secondary-fixed-dim": "#e7c185",
+            "inverse-on-surface": "#2e3135",
+            "surface-container-highest": "#323539",
+            "on-primary-container": "#513d1d",
+            "on-surface": "#e1e2e8",
+            "on-error-container": "#ffdad6",
+            "on-tertiary": "#3c2f00",
+            "primary-fixed-dim": "#e0c298",
+            "on-background": "#e1e2e8",
+            "tertiary-container": "#cda931",
+            "secondary-fixed": "#ffdead",
+            "outline-variant": "#4d463c",
+            "surface-container-low": "#191c20",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#e9c349",
+            "secondary": "#e7c185",
+            "on-error": "#690005",
+            "surface-bright": "#36393e",
+            "on-tertiary-fixed": "#241a00",
+            "tertiary": "#ebc44b",
+            "inverse-primary": "#725b38",
+            "on-primary-fixed-variant": "#584323",
+            "surface": "#111418",
+            "surface-variant": "#323539",
+            "on-secondary-container": "#d5af75"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "4rem",
+            "space-xl": "3.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter": "1.75rem",
+            "space-md": "1.25rem",
+            "space-lg": "2.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.375rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Noto Serif JP", "Noto Serif", "serif"],
+            "body-sm": ["Manrope", "sans-serif"],
+            "headline-xl-mobile": ["Noto Serif JP", "Noto Serif", "serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "headline-md": ["Noto Serif JP", "Noto Serif", "serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "label-lg": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Noto Serif JP", "Noto Serif", "serif"],
+            "display": ["Noto Serif JP", "Noto Serif", "serif"],
+            "display-mobile": ["Noto Serif JP", "Noto Serif", "serif"],
+            "headline-lg": ["Noto Serif JP", "Noto Serif", "serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-xl": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.015em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "38px", "fontWeight": "500" }],
+            "body-md": ["15px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.12em", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "display": ["56px", { "lineHeight": "68px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "display-mobile": ["36px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "headline-lg": ["30px", { "lineHeight": "42px", "fontWeight": "500" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.16em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest">
+<!-- 1) TopNavBar (Shared Component Execution) -->
+<header class="fixed top-0 left-0 right-0 w-full z-50 px-4 md:px-8 py-4 flex items-center justify-between max-w-[1440px] mx-auto bg-surface/95 backdrop-blur-md border-b border-outline-variant transition-all duration-200">
+<div class="flex items-center gap-6 min-w-0">
+<a class="flex flex-col text-left group" href="index.html">
+<span class="font-headline-sm text-headline-sm tracking-wider text-primary uppercase font-bold group-hover:text-primary-fixed transition-colors">
+          福岡エステート株式会社
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-[0.2em] uppercase">
+          FUKUOKA ESTATE Co., Ltd.
+        </span>
+</a>
+</div>
+<!-- Navigation links -->
+<nav class="hidden lg:flex items-center gap-8">
+<div class="relative group/menu">
+<a class="font-label-md text-label-md tracking-wider text-primary border-b border-primary pb-1 flex items-center gap-1" href="index.html#services">
+        事業内容<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</a>
+<div class="absolute left-1/2 -translate-x-1/2 top-full pt-4 hidden group-hover/menu:block group-focus-within/menu:block">
+<div class="w-60 bg-surface-container-low border border-outline-variant border-t-2 border-t-primary shadow-2xl py-2">
+<a class="flex items-center justify-between px-5 py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="residence.html">レジデンスシリーズ<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between px-5 py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="tenant.html">テナントシリーズ<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between px-5 py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="parking.html">駐車場管理システム<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between px-5 py-3 font-body-sm text-body-sm text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" href="management.html">管理システム<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+</div>
+</div>
+</div>
+<a class="font-label-md text-label-md tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-1" href="property.html">
+        物件情報
+      </a>
+<a class="font-label-md text-label-md tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-1" href="results.html">
+        実績
+      </a>
+<a class="font-label-md text-label-md tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-1" href="company.html">
+        会社概要
+      </a>
+<a class="font-label-md text-label-md tracking-wider text-on-surface-variant hover:text-primary transition-colors pb-1" href="contact.html">
+        お問い合わせ
+      </a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-3 md:gap-6 shrink-0">
+<a class="hidden md:flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="tel:092-409-2585">
+<span class="material-symbols-outlined text-primary text-[18px]">call</span>
+<span class="tracking-widest">TEL: 092-409-2585</span>
+</a>
+<a class="hidden sm:inline-block bg-primary text-surface-container-lowest font-label-md text-label-md uppercase px-5 py-2.5 rounded tracking-widest hover:bg-primary-fixed transition-all duration-200 shadow-sm active:scale-95 font-semibold" href="contact.html">
+        資料請求・お問い合わせ
+      </a>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く" class="lg:hidden w-10 h-10 flex items-center justify-center border border-outline-variant rounded text-primary hover:border-primary transition-colors" id="menu-toggle" type="button">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+</div>
+<!-- Mobile menu -->
+<div class="hidden lg:hidden absolute top-full left-0 w-full bg-surface border-b border-outline-variant shadow-2xl max-h-[calc(100vh-76px)] overflow-y-auto" id="mobile-menu">
+<nav class="px-6 py-4 flex flex-col">
+<a class="flex items-center justify-between py-3.5 border-b border-outline-variant/60 font-label-md text-label-md tracking-wider text-primary" href="index.html#services">事業内容<span class="material-symbols-outlined text-[18px]">expand_more</span></a>
+<div class="flex flex-col py-2 border-b border-outline-variant/60">
+<a class="flex items-center justify-between py-2.5 pl-4 border-l border-outline-variant font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="residence.html">レジデンスシリーズ<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-2.5 pl-4 border-l border-outline-variant font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="tenant.html">テナントシリーズ<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-2.5 pl-4 border-l border-outline-variant font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="parking.html">駐車場管理システム<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-2.5 pl-4 border-l border-outline-variant font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="management.html">管理システム<span class="material-symbols-outlined text-[16px]">chevron_right</span></a>
+</div>
+<a class="flex items-center justify-between py-3.5 border-b border-outline-variant/60 font-label-md text-label-md tracking-wider text-on-surface hover:text-primary transition-colors" href="property.html">物件情報<span class="material-symbols-outlined text-[18px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-3.5 border-b border-outline-variant/60 font-label-md text-label-md tracking-wider text-on-surface hover:text-primary transition-colors" href="results.html">実績<span class="material-symbols-outlined text-[18px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-3.5 border-b border-outline-variant/60 font-label-md text-label-md tracking-wider text-on-surface hover:text-primary transition-colors" href="company.html">会社概要<span class="material-symbols-outlined text-[18px]">chevron_right</span></a>
+<a class="flex items-center justify-between py-3.5 border-b border-outline-variant/60 font-label-md text-label-md tracking-wider text-on-surface hover:text-primary transition-colors" href="contact.html">お問い合わせ<span class="material-symbols-outlined text-[18px]">chevron_right</span></a>
+<a class="mt-5 flex items-center gap-2 font-label-md text-label-md text-on-surface-variant" href="tel:092-409-2585"><span class="material-symbols-outlined text-primary text-[18px]">call</span><span class="tracking-widest">TEL: 092-409-2585</span></a>
+<a class="mt-4 mb-2 bg-primary text-surface-container-lowest font-label-md text-label-md px-5 py-3.5 rounded tracking-widest text-center font-semibold" href="contact.html">資料請求・お問い合わせ</a>
+</nav>
+</div>
+</header>
+<main class="w-full max-w-[1440px] mx-auto pt-20 overflow-hidden">
+<!-- ページタイトル -->
+<section class="relative min-h-[460px] md:min-h-[600px] flex items-end px-6 md:px-16 pt-16 pb-14 md:pb-20 border-b border-outline-variant overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="" class="w-full h-full object-cover brightness-[0.45] contrast-[1.1]" src="../shared/img/photo/parking.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-surface/40"></div>
+</div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-6">
+<nav aria-label="パンくずリスト" class="flex flex-wrap items-center gap-2 font-label-md text-label-md tracking-wider text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="index.html">TOP</a>
+<span class="text-outline">＞</span>
+<span aria-current="page" class="text-primary">駐車場管理システム</span>
+</nav>
+<div class="inline-flex items-center gap-3 border-l-2 border-primary pl-4">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.25em] text-primary font-bold">PARKING MANAGEMENT</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface font-semibold tracking-tight">駐車場管理システム</h1>
+<p class="font-body-md text-body-md md:font-body-lg md:text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">契約・空き状況・入金をまとめて管理する、当社運営の駐車場管理サービスです。</p>
+</div>
+</section>
+<!-- できること -->
+<section class="px-6 md:px-16 py-20 md:py-28 border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase">FUNCTIONS</span>
+<span class="w-8 h-px bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">システムでできること</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="relative bg-surface-container-low border border-outline-variant p-8 flex flex-col gap-4 group hover:border-primary transition-all duration-300">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[24px]">local_parking</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">空き区画の確認</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">区画ごとの契約状況と空き状況をひと目で確認できます。</p>
+</div>
+<div class="relative bg-surface-container-low border border-outline-variant p-8 flex flex-col gap-4 group hover:border-primary transition-all duration-300">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[24px]">directions_car</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">契約者・車両情報の管理</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">契約者の連絡先や車両情報をまとめて管理します。</p>
+</div>
+<div class="relative bg-surface-container-low border border-outline-variant p-8 flex flex-col gap-4 group hover:border-primary transition-all duration-300">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">月極料金の入金確認</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">毎月の入金状況を確認し、未入金にも早めに対応します。</p>
+</div>
+<div class="relative bg-surface-container-low border border-outline-variant p-8 flex flex-col gap-4 group hover:border-primary transition-all duration-300">
+<div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent"></div>
+<div class="w-12 h-12 rounded bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[24px]">summarize</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">オーナー様への収支レポート</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">駐車場ごとの収支をまとめ、定期的にご報告します。</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-8">※ 掲載内容はイメージです。</p>
+</section>
+<!-- ご利用の流れ -->
+<section class="px-6 md:px-16 py-20 md:py-28 border-b border-outline-variant">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase">FLOW</span>
+<span class="w-8 h-px bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">ご利用の流れ</h2>
+</div>
+</div>
+<ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+<li class="relative bg-surface-container-low border border-outline-variant p-6 md:p-8 flex flex-col gap-3">
+<div class="flex items-baseline gap-3">
+<span class="font-label-sm text-label-sm text-outline tracking-widest">STEP</span>
+<span class="font-headline-lg text-headline-lg text-primary leading-none">01</span>
+</div>
+<div class="w-8 h-px bg-primary/60"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">ご相談・現地調査</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">土地の広さや周辺環境を現地で確認します。</p>
+<span class="hidden lg:flex absolute top-1/2 -right-[22px] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-surface border border-outline-variant items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">chevron_right</span></span>
+</li>
+<li class="relative bg-surface-container-low border border-outline-variant p-6 md:p-8 flex flex-col gap-3">
+<div class="flex items-baseline gap-3">
+<span class="font-label-sm text-label-sm text-outline tracking-widest">STEP</span>
+<span class="font-headline-lg text-headline-lg text-primary leading-none">02</span>
+</div>
+<div class="w-8 h-px bg-primary/60"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">収支プランのご提案</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">区画数や料金設定をもとに収支の見込みをご提案します。</p>
+<span class="hidden lg:flex absolute top-1/2 -right-[22px] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-surface border border-outline-variant items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">chevron_right</span></span>
+</li>
+<li class="relative bg-surface-container-low border border-outline-variant p-6 md:p-8 flex flex-col gap-3">
+<div class="flex items-baseline gap-3">
+<span class="font-label-sm text-label-sm text-outline tracking-widest">STEP</span>
+<span class="font-headline-lg text-headline-lg text-primary leading-none">03</span>
+</div>
+<div class="w-8 h-px bg-primary/60"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">契約・システム登録</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">ご契約後、区画や料金の情報をシステムに登録します。</p>
+<span class="hidden lg:flex absolute top-1/2 -right-[22px] -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-surface border border-outline-variant items-center justify-center text-primary"><span class="material-symbols-outlined text-[18px]">chevron_right</span></span>
+</li>
+<li class="relative bg-surface-container-low border border-outline-variant p-6 md:p-8 flex flex-col gap-3">
+<div class="flex items-baseline gap-3">
+<span class="font-label-sm text-label-sm text-outline tracking-widest">STEP</span>
+<span class="font-headline-lg text-headline-lg text-primary leading-none">04</span>
+</div>
+<div class="w-8 h-px bg-primary/60"></div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">運営開始・月次レポート</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">運営を開始し、毎月の収支をレポートでお届けします。</p>
+
+</li>
+</ol>
+<p class="font-body-sm text-body-sm text-outline mt-8">※ 掲載内容はイメージです。</p>
+</section>
+<!-- オーナー様 / ご利用者様 -->
+<section class="px-6 md:px-16 py-20 md:py-28 border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase">FOR OWNERS & USERS</span>
+<span class="w-8 h-px bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">オーナー様・ご利用者様へ</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="border border-outline-variant bg-surface-container-low p-8 md:p-10 border-l-2 border-l-primary">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-3">FOR OWNERS</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">オーナー様へ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">使っていない土地を駐車場として活用できます。契約の管理や入金の確認は当社が行い、毎月の収支をレポートでお届けします。</p>
+</div>
+<div class="border border-outline-variant bg-surface-container-low p-8 md:p-10 border-l-2 border-l-primary">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-3">FOR USERS</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">ご利用者様へ</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">空き区画の確認からお申し込みまで、スムーズにご案内します。契約内容や車両情報の変更もお気軽にご相談ください。</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-8">※ 掲載内容はイメージです。</p>
+</section>
+<!-- 運営サイト -->
+<section class="px-6 md:px-16 py-20 md:py-24 border-b border-outline-variant bg-surface-container-lowest">
+<div class="max-w-5xl mx-auto border border-outline-variant bg-surface-container-low p-8 md:p-12 relative flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-2">OPERATING SITE</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">当社が運営する駐車場管理システムのサイトです。空き区画の確認や契約内容の管理にご利用いただけます。</p>
+</div>
+<a class="shrink-0 border border-primary text-primary font-label-md text-label-md px-8 py-4 rounded tracking-widest hover:bg-primary hover:text-surface-container-lowest transition-all duration-200 flex items-center justify-center gap-3 font-semibold" href="#">
+<span>駐車場管理システムを見る</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+</div>
+</section>
+<!-- 他のシリーズ -->
+<section class="px-6 md:px-16 py-20 md:py-28 border-b border-outline-variant">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase">OTHER SERIES</span>
+<span class="w-8 h-px bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">その他の事業</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<a class="bg-surface-container-low border border-outline-variant p-6 flex flex-col justify-between group hover:border-primary transition-all duration-300" href="residence.html">
+<div>
+<div class="relative w-full h-44 mb-6 overflow-hidden rounded bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../shared/img/photo/residence.jpg"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 border-l-2 border-primary">
+<span class="font-label-sm text-label-sm text-primary tracking-widest">RESIDENCE</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">レジデンスシリーズ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">単身者からご家族まで。立地と暮らしやすさを考えた賃貸・分譲マンション。</p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/50 flex items-center justify-between text-outline group-hover:text-primary transition-colors">
+<span class="font-label-sm text-label-sm tracking-wider">VIEW DETAIL</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</a>
+<a class="bg-surface-container-low border border-outline-variant p-6 flex flex-col justify-between group hover:border-primary transition-all duration-300" href="tenant.html">
+<div>
+<div class="relative w-full h-44 mb-6 overflow-hidden rounded bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../shared/img/photo/tenant.jpg"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 border-l-2 border-primary">
+<span class="font-label-sm text-label-sm text-primary tracking-widest">COMMERCIAL</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">テナントシリーズ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">店舗・事務所として使える、立地を活かしたテナントビル。</p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/50 flex items-center justify-between text-outline group-hover:text-primary transition-colors">
+<span class="font-label-sm text-label-sm tracking-wider">VIEW DETAIL</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</a>
+<a class="bg-surface-container-low border border-outline-variant p-6 flex flex-col justify-between group hover:border-primary transition-all duration-300" href="management.html">
+<div>
+<div class="relative w-full h-44 mb-6 overflow-hidden rounded bg-surface-container">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../shared/img/photo/lobby.jpg"/>
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 border-l-2 border-primary">
+<span class="font-label-sm text-label-sm text-primary tracking-widest">MANAGEMENT</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3 group-hover:text-primary transition-colors">管理システム</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">入居者・契約・修繕の情報をまとめて扱う物件管理の仕組み。</p>
+</div>
+<div class="pt-6 mt-6 border-t border-outline-variant/50 flex items-center justify-between text-outline group-hover:text-primary transition-colors">
+<span class="font-label-sm text-label-sm tracking-wider">VIEW DETAIL</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</div>
+</a>
+</div>
+</section>
+<!-- お問い合わせ誘導帯 -->
+<section class="relative px-6 md:px-16 py-20 md:py-24 bg-surface-container-lowest border-b border-outline-variant overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+<div class="max-w-6xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+<div>
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm tracking-[0.2em] text-primary uppercase">CONTACT</span>
+<span class="w-8 h-px bg-outline-variant"></span>
+</div>
+<h2 class="font-headline-lg text-[24px] leading-[36px] md:text-headline-lg text-on-surface">
+          物件のご相談・資料請求はお気軽に
+        </h2>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center gap-6">
+<a class="flex items-center gap-4 group" href="tel:092-409-2585">
+<span class="w-12 h-12 rounded bg-surface-container border border-outline-variant flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-surface-container-lowest transition-colors">
+<span class="material-symbols-outlined text-[24px]">call</span>
+</span>
+<span>
+<span class="block font-label-sm text-label-sm text-outline uppercase tracking-widest">TEL</span>
+<span class="block font-headline-md text-[26px] leading-[34px] text-primary tracking-wider">092-409-2585</span>
+</span>
+</a>
+<a class="bg-primary text-surface-container-lowest font-label-md text-label-md uppercase px-8 py-4 rounded tracking-widest hover:bg-primary-fixed transition-all duration-200 shadow-lg active:scale-95 font-semibold flex items-center justify-center gap-3" href="contact.html">
+<span>お問い合わせ</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- 9) Corporate Footer (Shared Component Execution) -->
+<footer class="w-full px-6 md:px-8 py-16 max-w-[1440px] mx-auto flex flex-col gap-12 bg-surface-container-lowest text-on-surface border-t border-outline-variant">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Brand & Headquarter details -->
+<div class="lg:col-span-6 flex flex-col gap-4">
+<div>
+<a class="font-headline-md text-headline-md tracking-widest text-primary font-bold hover:text-primary-fixed transition-colors" href="index.html">
+            福岡エステート株式会社
+          </a>
+<span class="block font-label-sm text-label-sm text-outline tracking-[0.2em] uppercase mt-1">
+            FUKUOKA ESTATE Co., Ltd.
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mt-2">
+          福岡および九州主要都市における不動産開発、1棟収益不動産の売買仲介、アセットマネジメント。
+        </p>
+<div class="mt-4 space-y-2 text-body-sm font-body-sm text-on-surface-variant">
+<p><span class="text-outline">本社:</span> 〒810-0073 福岡市中央区舞鶴2丁目8-13 1F</p>
+<p><span class="text-outline">東区営業所:</span> 〒812-0053 福岡市東区箱崎1丁目28-17 KINGS PARK HAKOZAKI 8-9F</p>
+<p><span class="text-outline">代表電話:</span> <span class="text-primary font-mono">092-409-2585</span></p>
+<p><span class="text-outline">免許番号:</span> 宅地建物取引業免許 福岡県知事（2）19743</p>
+</div>
+</div>
+<!-- Quick Nav Links -->
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold mb-2">QUICK LINKS</span>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="index.html#services">事業内容</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="property.html">仲介業者様向け物件情報</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="results.html">実績・ポートフォリオ</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="company.html">会社概要</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="contact.html">資料請求・お問い合わせ</a>
+</div>
+<!-- Policy & Governance Links (From JSON) -->
+<div class="lg:col-span-3 flex flex-col gap-3">
+<span class="font-label-sm text-label-sm tracking-widest text-primary uppercase font-bold mb-2">COMPLIANCE</span>
+<a class="font-label-sm text-label-sm tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="results.html">PORTFOLIO DISCLOSURES</a>
+<a class="font-label-sm text-label-sm tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="company.html">CAPITAL ALLOCATION</a>
+<a class="font-label-sm text-label-sm tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="company.html">REGULATORY COMPLIANCE</a>
+<a class="font-label-sm text-label-sm tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="contact.html#privacy">PRIVACY POLICY</a>
+<a class="font-label-sm text-label-sm tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="company.html#offices">ACCESS &amp; HEADQUARTERS</a>
+</div>
+</div>
+<!-- Copyright ribbon -->
+<div class="pt-8 border-t border-outline-variant/60 flex flex-col sm:flex-row items-center justify-between text-outline text-xs gap-4 text-center sm:text-left">
+<div>
+        © 2024 Fukuoka Estate Co., Ltd. All Rights Reserved. Institutional Real Estate &amp; Asset Management.
+      </div>
+<div class="font-label-sm text-label-sm tracking-widest text-primary">
+        FUKUOKA / HAKATA / KYUSHU
+      </div>
+</div>
+</footer>
+<script>
+  (function () {
+    var b = document.getElementById('menu-toggle'), m = document.getElementById('mobile-menu');
+    if (!b || !m) return;
+    function set(open) {
+      m.classList.toggle('hidden', !open);
+      b.setAttribute('aria-expanded', String(open));
+      b.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+      b.querySelector('span').textContent = open ? 'close' : 'menu';
+    }
+    b.addEventListener('click', function () { set(m.classList.contains('hidden')); });
+    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+  })();
+</script>
+</body></html>
