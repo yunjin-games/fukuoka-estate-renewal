@@ -1,125 +1,99 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>福岡エステート 리뉴얼 시안</title>
+<meta name="robots" content="noindex, nofollow">
+<title>ホームページ リニューアル デザイン案｜福岡エステート株式会社</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap">
 <style>
-:root{
-  --bg:#f3f4f6; --panel:#ffffff; --ink:#1f232a; --sub:#69717d; --line:#d9dde3;
-  --stitch:#2f6db5; --claude:#b0563a; --cd:#6b5aa6;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--stitch);outline-offset:2px}
-
-.intro{background:var(--panel);padding:40px 16px 28px}
-.intro .in{max-width:1180px;margin:0 auto}
-.intro h1{font-size:26px;letter-spacing:-.01em}
-.intro p{color:var(--sub);margin-top:6px;max-width:680px}
-
-nav{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--line)}
-.tabs{max-width:1180px;margin:0 auto;display:flex;gap:4px;padding:0 16px;overflow-x:auto;scrollbar-width:thin}
-.group{display:flex;gap:2px;align-items:center;padding-right:12px;margin-right:8px;border-right:1px solid var(--line)}
-.group:last-child{border-right:0}
-.glabel{font-size:12px;color:var(--sub);margin-right:6px;white-space:nowrap}
-.tab{display:inline-flex;align-items:center;gap:7px;padding:14px 12px;font-size:14px;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
-.tab::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
-.tab:hover{border-bottom-color:var(--c)}
-.tab.wait{color:#a3a9b2;cursor:default}
-.tab.wait:hover{border-bottom-color:transparent}
-
-main{max-width:1180px;margin:0 auto;padding:32px 16px 64px}
-section + section{margin-top:44px}
-h2{font-size:18px;display:flex;align-items:center;gap:8px;margin-bottom:16px}
-h2::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c)}
-h2 small{font-weight:400;color:var(--sub);font-size:13.5px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--c);transform:translateY(-2px)}
-.card img{display:block;width:100%;aspect-ratio:1440/1000;object-fit:cover;object-position:top;border-bottom:1px solid var(--line);background:#e6e8ec}
-.card .tx{padding:14px 16px 16px}
-.card b{display:block;font-size:15.5px}
-.card span{display:block;font-size:13.5px;color:var(--sub);margin-top:2px}
-.card .go{margin-top:10px;font-size:13px;color:var(--c);font-weight:700}
-.card.wait{cursor:default}
-.card.wait:hover{transform:none;border-color:var(--line)}
-.card.wait .ph{aspect-ratio:1440/1000;display:flex;align-items:center;justify-content:center;color:#a3a9b2;font-size:14px;border-bottom:1px solid var(--line);background:repeating-linear-gradient(135deg,#f6f7f9 0 12px,#eef0f3 12px 13px)}
-footer{max-width:1180px;margin:0 auto;padding:0 16px 40px;color:var(--sub);font-size:12.5px}
-@media (max-width:900px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
-@media (max-width:560px){ .grid{grid-template-columns:1fr} .intro h1{font-size:22px} }
-@media (prefers-reduced-motion:reduce){ .card{transition:none} .card:hover{transform:none} }
+:root{--bg:#f5f6f7;--ink:#1c2230;--mute:#626a77;--line:#dcdfe4;--accent:#1d2b4f}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;line-height:1.8;letter-spacing:.03em}
+html[lang=ko] body{font-family:"Noto Sans KR",sans-serif;letter-spacing:0;word-break:keep-all}
+html[lang=en] body{font-family:"Noto Sans",sans-serif;letter-spacing:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+header{border-bottom:1px solid var(--line);background:#fff}
+.head{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo{font-weight:700;font-size:17px;letter-spacing:.06em;line-height:1.3}
+.logo small{display:block;font-size:11px;font-weight:500;color:var(--mute);letter-spacing:.08em}
+.langs{display:flex;gap:4px;list-style:none;margin:0;padding:0;font-size:13px}
+.langs button{font:inherit;background:none;border:1px solid transparent;padding:4px 10px;cursor:pointer;color:var(--mute)}
+.langs button[aria-pressed=true]{border-color:var(--ink);color:var(--ink);font-weight:700}
+.intro{padding:64px 0 40px}
+.intro h1{font-size:clamp(24px,3.4vw,38px);margin:0 0 8px;font-weight:700;line-height:1.4}
+.intro p{margin:0;color:var(--mute);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;padding:0 0 96px;list-style:none;margin:0}
+.card{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--line)}
+.thumb{aspect-ratio:16/10;overflow:hidden;border-bottom:1px solid var(--line);background:#e9ebee}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
+.body{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tag{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--mute)}
+.name{font-size:20px;font-weight:700;margin:0}
+.desc{font-size:14px;color:var(--mute);margin:0;flex:1}
+.go{display:inline-flex;align-self:flex-start;margin-top:12px;padding:10px 22px;background:var(--ink);color:#fff;font-size:14px;font-weight:500}
+.card:hover .go{background:var(--accent)}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:12px;color:var(--mute)}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="intro"><div class="in">
-  <h1>福岡エステート株式会社 홈페이지 리뉴얼 시안</h1>
-  <p>부동산 사업만 남긴 TOP 페이지 시안입니다. 위의 탭이나 아래 카드를 누르면 시안이 새 창에서 열립니다.</p>
-</div></div>
-<nav aria-label="시안"><div class="tabs" id="tabs"></div></nav>
-<main id="main"></main>
-<footer>2026-10 · 시안 단계 — 사진·실적 숫자는 확정 후 바꿉니다.</footer>
-
+<header><div class="wrap head">
+<div class="logo">福岡エステート株式会社<small>Fukuoka Estate Co., Ltd.</small></div>
+<ul class="langs"><li><button type="button" data-lang="ja" aria-pressed="true" lang="ja">日本語</button></li><li><button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button></li><li><button type="button" data-lang="ko" aria-pressed="false" lang="ko">한국어</button></li></ul>
+</div></header>
+<main class="wrap">
+<section class="intro"><h1 data-i18n="title">ホームページ リニューアル デザイン案</h1><p data-i18n="lead">6つのデザイン案をご用意しました。各案ともトップページを新しいウィンドウでご覧いただけます。</p></section>
+<ul class="grid">
+<li><a class="card" href="design-a/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-a.jpg" alt=""></div><div class="body"><span class="tag">DESIGN A</span><h2 class="name" data-i18n="a">信頼・コーポレート</h2><p class="desc" data-i18n="ad">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+<li><a class="card" href="design-b/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-b.jpg" alt=""></div><div class="body"><span class="tag">DESIGN B</span><h2 class="name" data-i18n="b">x</h2><p class="desc" data-i18n="bd">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+<li><a class="card" href="design-c/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-c.jpg" alt=""></div><div class="body"><span class="tag">DESIGN C</span><h2 class="name" data-i18n="c">x</h2><p class="desc" data-i18n="cd">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+<li><a class="card" href="design-d/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-d.jpg" alt=""></div><div class="body"><span class="tag">DESIGN D</span><h2 class="name" data-i18n="d">x</h2><p class="desc" data-i18n="dd">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+<li><a class="card" href="design-e/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-e.jpg" alt=""></div><div class="body"><span class="tag">DESIGN E</span><h2 class="name" data-i18n="e">x</h2><p class="desc" data-i18n="ed">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+<li><a class="card" href="design-f/index.html" target="_blank" rel="noopener"><div class="thumb"><img src="shared/img/thumb-f.jpg" alt=""></div><div class="body"><span class="tag">DESIGN F</span><h2 class="name" data-i18n="f">x</h2><p class="desc" data-i18n="fd">x</p><span class="go" data-i18n="view">見る →</span></div></a></li>
+</ul>
+</main>
+<footer><div class="wrap" data-i18n="foot">※ 本サイトはデザイン確認用の案です。実際の運営サイトではありません。</div></footer>
 <script>
-// 결과가 들어오면 ready 를 true 로 바꾸고 thumbs/<id>.jpg 를 만든다.
-const DESIGNS = [
-  {group:"스티치", c:"--stitch", id:"stitch_1", name:"스티치 1", ready:true,
-   desc:"남색 기업형 — 단단하고 보수적인 톤"},
-  {group:"스티치", c:"--stitch", id:"stitch_2", name:"스티치 2", ready:true,
-   desc:"밝은 주거형 — 명조체와 넓은 여백"},
-  {group:"스티치", c:"--stitch", id:"stitch_3", name:"스티치 3", ready:true,
-   desc:"어두운 고급형 — 짙은 회색과 금색"},
-  {group:"클로드", c:"--claude", id:"claude_1", name:"클로드 1 · 献上", ready:true,
-   desc:"하카타오리 다섯 색 줄무늬, 세로쓰기 제목"},
-  {group:"클로드", c:"--claude", id:"claude_2", name:"클로드 2 · 図面", ready:true,
-   desc:"건축 도면 — 입면도와 표제란"},
-  {group:"클로드 디자인", c:"--cd", id:"claude_design_1", name:"클로드 디자인 1 · 사진과 거리", ready:true,
-   desc:"잡지 같은 구성, 크림 바탕과 명조체"},
-  {group:"클로드 디자인", c:"--cd", id:"claude_design_2", name:"클로드 디자인 2 · 지역과 규모", ready:false,
-   desc:"규슈 지도로 거래 지역 표시"},
-  {group:"클로드 디자인", c:"--cd", id:"claude_design_3", name:"클로드 디자인 3 · 상담 우선", ready:false,
-   desc:"큰 글씨, 전화·문의 동선 우선"},
-];
-
-const tabs = document.getElementById("tabs");
-const main = document.getElementById("main");
-const href = d => `designs/${d.id}/index.html`;
-let lastGroup = null, groupEl = null, gridEl = null;
-
-DESIGNS.forEach(d => {
-  if (d.group !== lastGroup) {
-    lastGroup = d.group;
-    groupEl = document.createElement("div");
-    groupEl.className = "group";
-    groupEl.innerHTML = `<span class="glabel">${d.group}</span>`;
-    tabs.appendChild(groupEl);
-    const sec = document.createElement("section");
-    sec.style.setProperty("--c", `var(${d.c})`);
-    sec.innerHTML = `<h2>${d.group}</h2><div class="grid"></div>`;
-    main.appendChild(sec);
-    gridEl = sec.querySelector(".grid");
-  }
-
-  const tab = document.createElement(d.ready ? "a" : "span");
-  tab.className = "tab" + (d.ready ? "" : " wait");
-  tab.style.setProperty("--c", `var(${d.c})`);
-  tab.textContent = d.name + (d.ready ? "" : " (준비 중)");
-  if (d.ready) { tab.href = href(d); tab.target = "_blank"; tab.rel = "noopener"; }
-  groupEl.appendChild(tab);
-
-  const card = document.createElement(d.ready ? "a" : "div");
-  card.className = "card" + (d.ready ? "" : " wait");
-  card.style.setProperty("--c", `var(${d.c})`);
-  if (d.ready) {
-    card.href = href(d); card.target = "_blank"; card.rel = "noopener";
-    card.innerHTML = `<img src="thumbs/${d.id}.jpg" alt="${d.name} 첫 화면" loading="lazy">
-      <div class="tx"><b>${d.name}</b><span>${d.desc}</span><div class="go">새 창에서 보기</div></div>`;
-  } else {
-    card.innerHTML = `<div class="ph">준비 중</div><div class="tx"><b>${d.name}</b><span>${d.desc}</span></div>`;
-  }
-  gridEl.appendChild(card);
-});
+(function(){
+var T={
+ja:{title:'ホームページ リニューアル デザイン案',lead:'6つのデザイン案をご用意しました。各案ともトップページを新しいウィンドウでご覧いただけます。',
+a:'信頼・コーポレート',ad:'紺を基調に、整ったグリッドで事業内容と会社情報を明快に示す、法人・仲介業者様向けの構成。',
+b:'明るいレジデンス',bd:'明朝体と広い余白、やわらかな色で、住まいを探す方やオーナー様に親しみやすい構成。',
+c:'ラグジュアリー・ダーク',cd:'チャコールと金、大きな写真で、一棟物件をお探しの投資家様に向けた重厚な構成。',
+d:'博多献上',dd:'博多織「献上柄」の五色を目印に、縦書きの見出しで福岡の会社らしさを表現した構成。',
+e:'図面',ed:'4つのシリーズを建築図面のような線画で描き、会社概要を図面の表題欄で見せる構成。',
+f:'街と写真',fd:'写真集のように福岡の街と建物の写真を大きく使う、余白の多いエディトリアルな構成。',
+view:'見る →',foot:'※ 本サイトはデザイン確認用の案です。実際の運営サイトではありません。',doc:'ホームページ リニューアル デザイン案｜福岡エステート株式会社'},
+en:{title:'Website Renewal: Design Proposals',lead:'Six design proposals. Each opens its top page in a new window.',
+a:'Trust & Corporate',ad:'A navy, grid-based layout that presents the business and company profile clearly, for corporate clients and brokers.',
+b:'Bright Residence',bd:'Mincho type, generous white space and soft colours, welcoming for home seekers and property owners.',
+c:'Luxury Dark',cd:'Charcoal and gold with large photography, a weighty layout for investors looking at whole buildings.',
+d:'Hakata Kenjo',dd:'The five colours of Hakata-ori kenjo weaving and vertical headings give it a distinctly Fukuoka character.',
+e:'Blueprint',ed:'The four series drawn as architectural line elevations, with the company profile set as a drawing title block.',
+f:'City & Photography',fd:'An editorial layout with large photographs of Fukuoka streets and buildings, like a photo book.',
+view:'View →',foot:'This site is a design proposal for review, not the live company website.',doc:'Website Renewal Design Proposals | Fukuoka Estate Co., Ltd.'},
+ko:{title:'홈페이지 리뉴얼 디자인 시안',lead:'디자인 시안 6가지를 준비했습니다. 각 시안의 첫 페이지가 새 창에서 열립니다.',
+a:'신뢰·기업형',ad:'남색 바탕의 정돈된 격자로 사업 내용과 회사 정보를 분명하게 보여 주는, 법인·중개업자용 구성.',
+b:'밝은 레지던스',bd:'명조체와 넉넉한 여백, 부드러운 색으로 집을 찾는 분과 건물 소유자에게 편안한 구성.',
+c:'럭셔리 다크',cd:'차콜과 골드, 큰 사진으로 1동 건물을 찾는 투자자를 위한 무게감 있는 구성.',
+d:'하카타 겐조',dd:'하카타오리 「겐조」 무늬의 다섯 색과 세로쓰기 제목으로 후쿠오카 회사다움을 표현한 구성.',
+e:'도면',ed:'네 가지 시리즈를 건축 도면 같은 선화로 그리고, 회사 개요를 도면 표제란으로 보여 주는 구성.',
+f:'거리와 사진',fd:'사진집처럼 후쿠오카 거리와 건물 사진을 크게 쓴, 여백이 많은 에디토리얼 구성.',
+view:'보기 →',foot:'※ 이 사이트는 디자인 확인용 시안이며 실제 운영 사이트가 아닙니다.',doc:'홈페이지 리뉴얼 디자인 시안 | 후쿠오카 에스테이트 주식회사'}};
+function set(l){
+ document.documentElement.lang=l;document.title=T[l].doc;
+ document.querySelectorAll('[data-i18n]').forEach(function(el){el.textContent=T[l][el.getAttribute('data-i18n')];});
+ document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+}
+document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){set(b.getAttribute('data-lang'));});});
+set('ja');
+})();
 </script>
 </body>
 </html>
