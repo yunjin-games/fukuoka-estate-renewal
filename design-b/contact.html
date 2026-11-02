@@ -205,10 +205,9 @@
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">お預かりした個人情報は、お問い合わせへの回答と物件情報のご案内のためにのみ利用し、法令に基づく場合を除き第三者に提供しません。</p>
 </div>
-<p class="font-body-sm text-body-sm text-outline">※ 掲載内容はイメージです。</p>
 </div>
 <div class="lg:col-span-8">
-<form id="contact-form" class="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-xl border border-outline-variant/60 shadow-sm space-y-8">
+<form data-contact-form class="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-xl border border-outline-variant/60 shadow-sm space-y-8">
 <!-- お問い合わせ項目 (Required) -->
 <div>
 <label class="block font-label-md text-label-md text-primary font-semibold mb-3">
@@ -216,19 +215,19 @@
 </label>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
 <label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
-<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" required="" type="radio"/>
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" required="" type="radio" value="不動産売却相談（売りたい）"/>
 <span class="font-body-sm text-body-sm text-on-surface">不動産売却相談（売りたい）</span>
 </label>
 <label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
-<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio" value="不動産購入相談（買いたい）"/>
 <span class="font-body-sm text-body-sm text-on-surface">不動産購入相談（買いたい）</span>
 </label>
 <label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
-<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio" value="賃貸（借りたい）"/>
 <span class="font-body-sm text-body-sm text-on-surface">賃貸（借りたい）</span>
 </label>
 <label class="flex items-center gap-3 p-3.5 border border-outline-variant/60 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors duration-150">
-<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio"/>
+<input class="w-4 h-4 text-primary focus:ring-secondary border-outline text-primary" name="inquiry_type" type="radio" value="その他"/>
 <span class="font-body-sm text-body-sm text-on-surface">その他</span>
 </label>
 </div>
@@ -240,10 +239,10 @@
 </label>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="姓 (例: 福岡)" required="" type="text"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" name="last_name" autocomplete="family-name" placeholder="姓 (例: 福岡)" required="" type="text"/>
 </div>
 <div>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="名 (例: 太郎)" required="" type="text"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" name="first_name" autocomplete="given-name" placeholder="名 (例: 太郎)" required="" type="text"/>
 </div>
 </div>
 </div>
@@ -252,27 +251,27 @@
 <label class="block font-label-md text-label-md text-primary font-semibold mb-2">
               メールアドレス <span class="text-error font-medium">※ (必須)</span>
 </label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="example@estate.co.jp" required="" type="email"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" name="email" autocomplete="email" placeholder="example@estate.co.jp" required="" type="email"/>
 </div>
 <!-- 電話番号 (Required) -->
 <div>
 <label class="block font-label-md text-label-md text-primary font-semibold mb-2">
               電話番号 <span class="text-error font-medium">※ (必須)</span>
 </label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="092-000-0000" required="" type="tel"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" name="tel" autocomplete="tel" placeholder="092-000-0000" required="" type="tel"/>
 </div>
 <!-- ご住所 -->
 <div>
 <label class="block font-label-md text-label-md text-primary font-semibold mb-2">
               ご住所 <span class="text-error font-medium">※ (必須)</span></label>
-<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" placeholder="福岡市中央区..." required="" type="text"/>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline" name="address" autocomplete="street-address" placeholder="福岡市中央区..." required="" type="text"/>
 </div>
 <!-- お問い合わせ内容 (Required) -->
 <div>
 <label class="block font-label-md text-label-md text-primary font-semibold mb-2">
               お問い合わせ内容 <span class="text-outline font-medium">(任意)</span>
 </label>
-<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline resize-y" placeholder="ご質問やご相談内容をご記入ください。" rows="5"></textarea>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-outline resize-y" name="message" placeholder="ご質問やご相談内容をご記入ください。" rows="5"></textarea>
 </div>
 <!-- 個人情報の取り扱いへの同意 (Required) -->
 <div class="pt-2">
@@ -281,9 +280,14 @@
 <span class="font-body-md text-body-md text-on-surface">個人情報の取り扱いに同意する <span class="text-error font-medium font-label-md text-label-md">※ (必須)</span></span>
 </label>
 </div>
-<div aria-live="polite" class="hidden items-start gap-3 p-5 rounded-lg bg-secondary-fixed/40 border border-secondary-fixed-dim text-on-secondary-fixed-variant" id="form-done">
+<div class="hidden" aria-hidden="true"><label>URL<input name="website" tabindex="-1" autocomplete="off" type="text"/></label></div>
+<div aria-live="polite" data-form-done class="hidden items-start gap-3 p-5 rounded-lg bg-secondary-fixed/40 border border-secondary-fixed-dim text-on-secondary-fixed-variant">
 <span class="material-symbols-outlined text-secondary">check_circle</span>
-<p class="font-body-md text-body-md">送信しました（デザイン見本のため実際には送信されません）</p>
+<p class="font-body-md text-body-md">送信しました。担当者よりご連絡いたします。</p>
+</div>
+<div aria-live="polite" data-form-error class="hidden items-start gap-3 p-5 rounded-lg border border-error text-error">
+<span class="material-symbols-outlined">error</span>
+<p class="font-body-md text-body-md">送信できませんでした。お手数ですが、お電話（092-409-2585）でご連絡ください。</p>
 </div>
 <!-- Submit Button -->
 <div class="pt-4 text-center">
@@ -337,20 +341,12 @@
 </ul>
 </div>
 </div>
+<p class="pt-6 font-body-sm text-body-sm text-outline">※ 掲載写真の一部はイメージです。</p>
 <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-2 font-body-sm text-body-sm text-center sm:text-left">
 <div>Copyright © 2019 Fukuoka Estate Co., Ltd. All Rights Reserved.</div>
 <div class="sm:text-right">(公社)全国宅地建物取引業保証協会 会員</div>
 </div>
 </div>
 </footer>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var done = document.getElementById('form-done');
-    done.classList.remove('hidden');
-    done.classList.add('flex');
-    this.querySelector('button[type="submit"]').disabled = true;
-    this.querySelector('button[type="submit"]').classList.add('opacity-60');
-  });
-</script>
+<script src="contact-form.js"></script>
 </body></html>
